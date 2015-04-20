@@ -18,7 +18,7 @@ import javax.swing.JPasswordField;
 
 public class Primera extends JFrame {
 
-	private JPanel contentPane;
+	private JPanel pantalla;
 	private JTextField CampoUsuario;
 	private JPasswordField CampoContra;
 
@@ -43,10 +43,10 @@ public class Primera extends JFrame {
 	public Primera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		contentPane = new Fondo("Bingo.jpg");
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		pantalla = new Fondo("Bingo.jpg");
+		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(pantalla);
+		pantalla.setLayout(null);
 		
 		JButton Entrar = new JButton("Entrar");
 		Entrar.addActionListener(new ActionListener() {
@@ -58,31 +58,31 @@ public class Primera extends JFrame {
 			}
 		});	
 		Entrar.setBounds(638, 516, 89, 23);
-		contentPane.add(Entrar);
+		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Pictures\\logo bingo bueno escalado2.png"));
 		logo.setBounds(88, 123, 700, 248);
-		contentPane.add(logo);
+		pantalla.add(logo);
 		
 		JLabel Usuario = new JLabel("Usuario");
 		Usuario.setForeground(Color.WHITE);
 		Usuario.setBounds(655, 446, 46, 14);
-		contentPane.add(Usuario);
+		pantalla.add(Usuario);
 		
 		CampoUsuario = new JTextField();
 		CampoUsuario.setBounds(711, 443, 120, 17);
-		contentPane.add(CampoUsuario);
+		pantalla.add(CampoUsuario);
 		CampoUsuario.setColumns(10);
 		
 		JLabel Contrasena = new JLabel("Contrase\u00F1a");
 		Contrasena.setForeground(Color.WHITE);
 		Contrasena.setBounds(638, 478, 76, 14);
-		contentPane.add(Contrasena);
+		pantalla.add(Contrasena);
 		
 		CampoContra = new JPasswordField();
 		CampoContra.setBounds(711, 474, 120, 18);
-		contentPane.add(CampoContra);
+		pantalla.add(CampoContra);
 		
 		JButton Salir = new JButton("Salir");
 		Salir.addActionListener(new ActionListener() {
@@ -91,7 +91,7 @@ public class Primera extends JFrame {
 			}
 		});	
 		Salir.setBounds(742, 516, 89, 23);
-		contentPane.add(Salir);
+		pantalla.add(Salir);
 		
 	
 
