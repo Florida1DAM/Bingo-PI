@@ -19,8 +19,8 @@ import javax.swing.JPasswordField;
 public class Primera extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField passwordField;
+	private JTextField CampoUsuario;
+	private JPasswordField CampoContra;
 
 	
 	
@@ -48,45 +48,52 @@ public class Primera extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton Start = new JButton("Entrar");
-		Start.addActionListener(new ActionListener() {
+		JButton Entrar = new JButton("Entrar");
+		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jugadores VentPrinc = new jugadores();
 				VentPrinc.setVisible (true);
-				Primera.this.dispose();				
+				Primera.this.dispose();			
 				
 			}
 		});	
-		Start.setBounds(638, 516, 89, 23);
-		contentPane.add(Start);
+		Entrar.setBounds(638, 516, 89, 23);
+		contentPane.add(Entrar);
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Pictures\\logo bingo bueno escalado2.png"));
-		label.setBounds(88, 123, 700, 248);
-		contentPane.add(label);
+		JLabel logo = new JLabel("");
+		logo.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Pictures\\logo bingo bueno escalado2.png"));
+		logo.setBounds(88, 123, 700, 248);
+		contentPane.add(logo);
 		
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(655, 446, 46, 14);
-		contentPane.add(lblUsuario);
+		JLabel Usuario = new JLabel("Usuario");
+		Usuario.setForeground(Color.WHITE);
+		Usuario.setBounds(655, 446, 46, 14);
+		contentPane.add(Usuario);
 		
-		textField = new JTextField();
-		textField.setBounds(711, 443, 120, 17);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		CampoUsuario = new JTextField();
+		CampoUsuario.setBounds(711, 443, 120, 17);
+		contentPane.add(CampoUsuario);
+		CampoUsuario.setColumns(10);
 		
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
-		lblContrasea.setForeground(Color.WHITE);
-		lblContrasea.setBounds(638, 478, 76, 14);
-		contentPane.add(lblContrasea);
+		JLabel Contrasena = new JLabel("Contrase\u00F1a");
+		Contrasena.setForeground(Color.WHITE);
+		Contrasena.setBounds(638, 478, 76, 14);
+		contentPane.add(Contrasena);
 		
-		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(742, 516, 89, 23);
-		contentPane.add(btnSalir);
+		CampoContra = new JPasswordField();
+		CampoContra.setBounds(711, 474, 120, 18);
+		contentPane.add(CampoContra);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(711, 474, 120, 18);
-		contentPane.add(passwordField);
+		JButton Salir = new JButton("Salir");
+		Salir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {						
+				Primera.this.dispose();							
+			}
+		});	
+		Salir.setBounds(742, 516, 89, 23);
+		contentPane.add(Salir);
+		
+	
 
 	}
 }
