@@ -1,4 +1,4 @@
-package Principal;
+package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -65,7 +65,7 @@ public class Principal extends JFrame {
 	public Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("Bingo.jpg");
+		pantalla = new Fondo("/Principal/imagenes/fondoprimera.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
