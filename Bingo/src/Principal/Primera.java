@@ -55,16 +55,20 @@ public class Primera extends JFrame {
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jugadores VentPrinc = new jugadores();
-				VentPrinc.setVisible (true);
 				Primera.this.dispose();			
-				
+				VentPrinc.setVisible (true);
+
 			}
 		});	
 		Entrar.setBounds(638, 516, 89, 23);
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
+<<<<<<< HEAD
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
+=======
+		logo.setIcon(new ImageIcon("/Bingo/src/Principal/imagenes/logo bingo bueno escalado2.png"));
+>>>>>>> branch 'master' of https://github.com/JoseAntonioRomero/Bingo-PI.git
 		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		
