@@ -64,11 +64,7 @@ public class Primera extends JFrame {
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
-<<<<<<< HEAD
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
-=======
-		logo.setIcon(new ImageIcon("/Bingo/src/Principal/imagenes/logo bingo bueno escalado2.png"));
->>>>>>> branch 'master' of https://github.com/JoseAntonioRomero/Bingo-PI.git
 		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		

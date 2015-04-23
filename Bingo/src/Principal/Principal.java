@@ -33,7 +33,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
-<<<<<<< HEAD
+
 import javax.swing.JLayeredPane;
 import javax.swing.JToolBar;
 import javax.swing.JDesktopPane;
@@ -47,12 +47,12 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.JList;
-=======
+
 import javax.swing.JTabbedPane;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Font;
->>>>>>> branch 'master' of https://github.com/JoseAntonioRomero/Bingo-PI.git
+
 
 public class Principal extends JFrame {
 
@@ -69,13 +69,8 @@ public class Principal extends JFrame {
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
-<<<<<<< HEAD
+
 		setTitle("Bingo twist");
-=======
-		
-		JSeparator separador = new JSeparator();
-		separador.setBounds(0, 434, 915, 9);
-		pantalla.add(separador);
 		
 		// Añade marcador de bolas salidas
 		for (int i=0;i<=8;i++){
@@ -86,20 +81,7 @@ public class Principal extends JFrame {
 		marcador[cont].setBounds(10+j*60, 10+i*45, 38, 38);
 		pantalla.add(marcador[cont]);
 		}}
-		
-		
-		JButton Atras = new JButton("Atras");
-		Atras.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				jugadores VentPrinc = new jugadores();
-				VentPrinc.setVisible (true);
-				Principal.this.dispose();			
-				
-			}
-		});	
-		Atras.setBounds(717, 468, 126, 30);
-		pantalla.add(Atras);
->>>>>>> branch 'master' of https://github.com/JoseAntonioRomero/Bingo-PI.git
+
 		
 		JButton Salir = new JButton("Salir");
 		Salir.addActionListener(new ActionListener() {
@@ -111,7 +93,7 @@ public class Principal extends JFrame {
 		Salir.setBounds(748, 521, 126, 29);
 		pantalla.add(Salir);
 		
-<<<<<<< HEAD
+
 		JButton btnPartidaNueva = new JButton("Partida Nueva");
 		btnPartidaNueva.setBounds(748, 480, 126, 30);
 		pantalla.add(btnPartidaNueva);
@@ -142,9 +124,7 @@ public class Principal extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("Jugador 3", null, panel_2, null);
-=======
-		
->>>>>>> branch 'master' of https://github.com/JoseAntonioRomero/Bingo-PI.git
+
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 	}
