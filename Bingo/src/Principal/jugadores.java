@@ -43,6 +43,7 @@ public class jugadores extends JFrame {
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
+		setTitle("Bingo twist");
 		
 		JLabel IntroduzcaJugadores = new JLabel("");
 		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/IntroduceJugadores.png")));

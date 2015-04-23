@@ -49,6 +49,7 @@ public class Primera extends JFrame {
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
+		setTitle("Bingo twist");
 		
 		JButton Entrar = new JButton("Entrar");
 		Entrar.addActionListener(new ActionListener() {
@@ -63,7 +64,7 @@ public class Primera extends JFrame {
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Pictures\\logo bingo bueno escalado2.png"));
+		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
 		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		
