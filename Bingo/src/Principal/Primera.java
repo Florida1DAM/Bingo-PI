@@ -54,9 +54,9 @@ public class Primera extends JFrame {
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jugadores VentPrinc = new jugadores();
-				VentPrinc.setVisible (true);
 				Primera.this.dispose();			
-				
+				VentPrinc.setVisible (true);
+
 			}
 		});	
 		Entrar.setBounds(638, 516, 89, 23);
