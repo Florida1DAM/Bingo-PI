@@ -18,6 +18,8 @@ import javax.swing.JPasswordField;
 
 public class Primera extends JFrame {
 
+	
+	private static final long serialVersionUID = 1L;
 	private JPanel pantalla;
 	private JTextField CampoUsuario;
 	private JPasswordField CampoContra;

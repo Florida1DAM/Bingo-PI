@@ -45,7 +45,7 @@ public class jugadores extends JFrame {
 		pantalla.setLayout(null);
 		
 		JLabel IntroduzcaJugadores = new JLabel("");
-		IntroduzcaJugadores.setIcon(new ImageIcon("//Bingo//src//Principal//imagenes//IntroduceJugadores.png"));
+		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/IntroduceJugadores.png")));
 		IntroduzcaJugadores.setBackground(Color.WHITE);
 		IntroduzcaJugadores.setFont(new Font("Trebuchet MS", Font.PLAIN, 28));
 		IntroduzcaJugadores.setBounds(241, 11, 471, 80);
@@ -107,12 +107,13 @@ public class jugadores extends JFrame {
 				
 			}
 		});
-		comienza.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Desktop\\1\u00BA DAM\\Proyecto integrado\\cooltext116275924563119.png"));
+		
+		comienza.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/Comienza.png")));
 		comienza.setBounds(202, 374, 195, 72);
 		pantalla.add(comienza);
 		
 		JLabel imagenBolas = new JLabel("");
-		imagenBolas.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Desktop\\1\u00BA DAM\\Proyecto integrado\\bolas.jpg"));
+		imagenBolas.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/bolas.jpg")));
 		imagenBolas.setBounds(607, 90, 241, 382);
 		pantalla.add(imagenBolas);
 		
