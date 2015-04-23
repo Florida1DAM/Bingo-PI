@@ -63,7 +63,7 @@ public class Primera extends JFrame {
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon("C:\\Users\\JoseAntonio\\Pictures\\logo bingo bueno escalado2.png"));
+		logo.setIcon(new ImageIcon("/Bingo/src/Principal/imagenes/logo bingo bueno escalado2.png"));
 		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		
