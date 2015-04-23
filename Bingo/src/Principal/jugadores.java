@@ -45,7 +45,7 @@ public class jugadores extends JFrame {
 		pantalla.setLayout(null);
 		
 		JLabel IntroduzcaJugadores = new JLabel("");
-		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/IntroduceJugadores.png")));
+		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/Introduzca jugador.png")));
 		IntroduzcaJugadores.setBackground(Color.WHITE);
 		IntroduzcaJugadores.setFont(new Font("Trebuchet MS", Font.PLAIN, 28));
 		IntroduzcaJugadores.setBounds(241, 11, 471, 80);
