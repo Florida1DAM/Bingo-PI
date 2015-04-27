@@ -56,9 +56,9 @@ public class jugadores extends JFrame {
 		Nombre = new JLabel("Nombre");
 		Nombre.setBackground(SystemColor.desktop);
 		Nombre.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		Nombre.setForeground(Color.BLACK);
+		Nombre.setForeground(SystemColor.desktop);
 		Nombre.setVerticalAlignment(SwingConstants.TOP);
-		Nombre.setBounds(336, 179, 96, 29);
+		Nombre.setBounds(319, 179, 96, 29);
 		pantalla.add(Nombre);
 		
 		CampoNombre = new JTextField();
@@ -69,8 +69,8 @@ public class jugadores extends JFrame {
 		Email = new JLabel("E-Mail");
 		Email.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		Email.setVerticalAlignment(SwingConstants.TOP);
-		Email.setForeground(Color.BLACK);
-		Email.setBounds(342, 224, 73, 29);
+		Email.setForeground(SystemColor.textHighlight);
+		Email.setBounds(319, 219, 73, 29);
 		pantalla.add(Email);
 		
 		CampoEmail = new JTextField();
