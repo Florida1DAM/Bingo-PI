@@ -65,7 +65,7 @@ public class Principal extends JFrame {
 	public Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("/Principal/imagenes/fondoprimera.jpg");
+		pantalla = new Fondo("/Principal/imagenes/Fondos/fondoPrincipal.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
@@ -103,12 +103,12 @@ public class Principal extends JFrame {
 		pantalla.add(btnBolaNueva);
 		
 		JButton btnLinea = new JButton("");
-		btnLinea.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnLinea.png")));
+		btnLinea.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/botones/btnLinea.png")));
 		btnLinea.setBounds(629, 11, 109, 50);
 		pantalla.add(btnLinea);
 		
 		JButton btnBingo = new JButton("");
-		btnBingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
+		btnBingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/botones/btnBingo.png")));
 		btnBingo.setBounds(765, 11, 109, 50);
 		pantalla.add(btnBingo);
 		
