@@ -1,27 +1,19 @@
 package Principal;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-
-import java.awt.Font;
 import java.awt.Color;
-
-import javax.swing.UIManager;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JSpinner;
-import javax.swing.JScrollBar;
-import javax.swing.JTextArea;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class jugadores extends JFrame {
 
@@ -75,8 +67,15 @@ public class jugadores extends JFrame {
 		CampoEmail.setColumns(10);
 		CampoEmail.setBounds(299, 230, 149, 20);
 		pantalla.add(CampoEmail);
+
+		
 		
 		JButton NuevoJugador = new JButton("Nuevo Jugador");
+		NuevoJugador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		NuevoJugador.setBounds(156, 278, 139, 23);
 		pantalla.add(NuevoJugador);
 		
@@ -101,10 +100,30 @@ public class jugadores extends JFrame {
 		JButton comienza = new JButton("");
 		comienza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Principal VentPrinc = new Principal();
-				VentPrinc.setVisible (true);
-				jugadores.this.dispose();				
 				
+				
+					/*
+					 * Si no hay ningun nombre de jugador, nos aparece un mensaje informativo
+					 * avisandonos de la auscencia de este
+					 */
+				
+					if (CampoNombre.getText().trim().isEmpty())
+					{
+						JOptionPane.showMessageDialog(CampoNombre,"No hay ningun jugador");
+						 Principal VentPrinc = new Principal();
+							VentPrinc.setVisible (false);
+							jugadores.this.dispose();	
+	
+					}
+					
+					else{
+						 Principal VentPrinc = new Principal();
+							VentPrinc.setVisible (true);
+							jugadores.this.dispose();	
+	
+					}
+								
+
 				
 			}
 		});
