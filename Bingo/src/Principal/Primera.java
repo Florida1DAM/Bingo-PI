@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -20,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JProgressBar;
 import javax.swing.JPasswordField;
 
+@SuppressWarnings("unused")
 public class Primera extends JFrame {
 
 	
@@ -49,7 +49,7 @@ public class Primera extends JFrame {
 	public Primera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("/Principal/imagenes/fondoPrimera.png");
+		pantalla = new Fondo("Bingo.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
@@ -57,59 +57,54 @@ public class Primera extends JFrame {
 		
 		JButton Entrar = new JButton("Entrar");
 		Entrar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
-				
-				if (CampoUsuario.getText().trim().isEmpty())
-				{
-					JOptionPane.showMessageDialog(CampoUsuario,"Introduce usuario");
-					 jugadores VentPrinc = new jugadores();
-						VentPrinc.setVisible (false);
-							
-				}
-				
-				else if(CampoContra.getText().trim().isEmpty())
-				{
-					JOptionPane.showMessageDialog(CampoContra,"Introduce una contraseña");
-					jugadores VentPrinc = new jugadores();
-					VentPrinc.setVisible (false);
-						
-				}
-				
-				else
-				
-				{
+				if(CampoUsuario.getText().trim().isEmpty()){
+					
+				JOptionPane.showMessageDialog(CampoUsuario,"No hay ningun jugador");
 				jugadores VentPrinc = new jugadores();
 				Primera.this.dispose();			
-				VentPrinc.setVisible (true);
+				VentPrinc.setVisible (false);
+				}
+			
+				else if (CampoContra.getText().trim().isEmpty()){
+				JOptionPane.showMessageDialog(CampoContra, "Por favor introduzca una contraseña");	
+				jugadores VentPrinc = new jugadores();
+				Primera.this.dispose();			
+				VentPrinc.setVisible (false);
+				}
+				else{
+					jugadores VentPrinc = new jugadores();
+					Primera.this.dispose();			
+					VentPrinc.setVisible (true);
 				}
 			}
-			
 		});	
-		Entrar.setBounds(357, 503, 89, 23);
+		Entrar.setBounds(638, 516, 89, 23);
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
-		logo.setBounds(71, 57, 700, 248);
+		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		
 		JLabel Usuario = new JLabel("Usuario");
 		Usuario.setForeground(Color.WHITE);
-		Usuario.setBounds(387, 434, 46, 14);
+		Usuario.setBounds(655, 446, 46, 14);
 		pantalla.add(Usuario);
 		
 		CampoUsuario = new JTextField();
-		CampoUsuario.setBounds(443, 432, 120, 17);
+		CampoUsuario.setBounds(711, 443, 120, 17);
 		pantalla.add(CampoUsuario);
 		CampoUsuario.setColumns(10);
 		
 		JLabel Contrasena = new JLabel("Contrase\u00F1a");
 		Contrasena.setForeground(Color.WHITE);
-		Contrasena.setBounds(370, 459, 76, 14);
+		Contrasena.setBounds(638, 478, 76, 14);
 		pantalla.add(Contrasena);
 		
 		CampoContra = new JPasswordField();
-		CampoContra.setBounds(443, 460, 120, 18);
+		CampoContra.setBounds(711, 474, 120, 18);
 		pantalla.add(CampoContra);
 		
 		JButton Salir = new JButton("Salir");
@@ -118,7 +113,7 @@ public class Primera extends JFrame {
 				Primera.this.dispose();							
 			}
 		});	
-		Salir.setBounds(478, 503, 89, 23);
+		Salir.setBounds(742, 516, 89, 23);
 		pantalla.add(Salir);
 		
 	
