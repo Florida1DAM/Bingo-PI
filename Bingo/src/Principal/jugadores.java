@@ -1,28 +1,19 @@
-package Vista;
+package Principal;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-
-import java.awt.Font;
 import java.awt.Color;
-
-import javax.swing.UIManager;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JSpinner;
-import javax.swing.JScrollBar;
-import javax.swing.JTextArea;
-import java.awt.SystemColor;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class jugadores extends JFrame {
 
@@ -40,46 +31,52 @@ public class jugadores extends JFrame {
 	public jugadores() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("/Principal/imagenes/Fondos/FondoJugadores.jpg");
+		pantalla = new Fondo("Bingo.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
 		setTitle("Bingo twist");
 		
 		JLabel IntroduzcaJugadores = new JLabel("");
-		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/botones/IntroduceJugadores.png")));
+		IntroduzcaJugadores.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/IntroduceJugadores.png")));
 		IntroduzcaJugadores.setBackground(Color.WHITE);
 		IntroduzcaJugadores.setFont(new Font("Trebuchet MS", Font.PLAIN, 28));
 		IntroduzcaJugadores.setBounds(241, 11, 471, 80);
 		pantalla.add(IntroduzcaJugadores);
 				
 		Nombre = new JLabel("Nombre");
-		Nombre.setBackground(SystemColor.desktop);
 		Nombre.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		Nombre.setForeground(SystemColor.desktop);
+		Nombre.setForeground(Color.WHITE);
 		Nombre.setVerticalAlignment(SwingConstants.TOP);
-		Nombre.setBounds(319, 179, 96, 29);
+		Nombre.setBounds(166, 179, 96, 29);
 		pantalla.add(Nombre);
 		
 		CampoNombre = new JTextField();
-		CampoNombre.setBounds(425, 185, 149, 20);
+		CampoNombre.setBounds(299, 185, 149, 20);
 		pantalla.add(CampoNombre);
 		CampoNombre.setColumns(10);
 		
 		Email = new JLabel("E-Mail");
 		Email.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		Email.setVerticalAlignment(SwingConstants.TOP);
-		Email.setForeground(SystemColor.textHighlight);
-		Email.setBounds(319, 219, 73, 29);
+		Email.setForeground(Color.WHITE);
+		Email.setBounds(164, 224, 73, 29);
 		pantalla.add(Email);
 		
 		CampoEmail = new JTextField();
 		CampoEmail.setColumns(10);
-		CampoEmail.setBounds(425, 230, 149, 20);
+		CampoEmail.setBounds(299, 230, 149, 20);
 		pantalla.add(CampoEmail);
+
+		
 		
 		JButton NuevoJugador = new JButton("Nuevo Jugador");
-		NuevoJugador.setBounds(235, 297, 139, 23);
+		NuevoJugador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+			}
+		});
+		NuevoJugador.setBounds(156, 278, 139, 23);
 		pantalla.add(NuevoJugador);
 		
 		JButton EliminarJugador = new JButton("Eliminar Jugador");
@@ -87,7 +84,7 @@ public class jugadores extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		EliminarJugador.setBounds(490, 297, 139, 23);
+		EliminarJugador.setBounds(315, 278, 139, 23);
 		pantalla.add(EliminarJugador);
 		
 		JButton Salir = new JButton("Salir");
@@ -103,17 +100,50 @@ public class jugadores extends JFrame {
 		JButton comienza = new JButton("");
 		comienza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Principal VentPrinc = new Principal();
-				VentPrinc.setVisible (true);
-				jugadores.this.dispose();				
 				
+				
+					/*
+					 * Si no hay ningun nombre de jugador y/o ningun email, nos aparece un mensaje informativo
+					 * avisandonos de la auscencia de este
+					 */
+					
+					if (CampoNombre.getText().trim().isEmpty())
+					{
+						JOptionPane.showMessageDialog(CampoNombre,"No hay ningun jugador");
+						 Principal VentPrinc = new Principal();
+							VentPrinc.setVisible (false);
+							jugadores.this.dispose();	
+	
+					}
+					
+					else if(CampoEmail.getText().trim().isEmpty())
+					{
+						JOptionPane.showMessageDialog(CampoEmail,"Introduce un Email");
+						Principal VentPrinc = new Principal();
+						VentPrinc.setVisible (false);
+						jugadores.this.dispose();	
+					}
+					
+					else
+					{
+						Principal VentPrinc = new Principal();
+						VentPrinc.setVisible (true);
+						jugadores.this.dispose();
+					}
+					
+
 				
 			}
 		});
 		
-		comienza.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/botones/Comienza.png")));
-		comienza.setBounds(333, 393, 195, 72);
+		comienza.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/Comienza.png")));
+		comienza.setBounds(202, 374, 195, 72);
 		pantalla.add(comienza);
+		
+		JLabel imagenBolas = new JLabel("");
+		imagenBolas.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/bolas.jpg")));
+		imagenBolas.setBounds(607, 90, 241, 382);
+		pantalla.add(imagenBolas);
 		
 		JButton Atras = new JButton("Atras");		
 		Atras.addActionListener(new ActionListener() {

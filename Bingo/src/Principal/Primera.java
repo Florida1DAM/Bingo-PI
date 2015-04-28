@@ -1,4 +1,4 @@
-package Vista;
+package Principal;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -11,9 +11,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-
 import java.awt.Color;
-
 import javax.swing.JTextField;
 import javax.swing.JProgressBar;
 import javax.swing.JPasswordField;
@@ -47,7 +45,7 @@ public class Primera extends JFrame {
 	public Primera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("/Principal/imagenes/Fondos/fondoPrimera.png");
+		pantalla = new Fondo("Bingo.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
@@ -62,31 +60,31 @@ public class Primera extends JFrame {
 
 			}
 		});	
-		Entrar.setBounds(317, 516, 89, 23);
+		Entrar.setBounds(638, 516, 89, 23);
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
-		logo.setBounds(72, 23, 700, 248);
+		logo.setBounds(88, 123, 700, 248);
 		pantalla.add(logo);
 		
 		JLabel Usuario = new JLabel("Usuario");
 		Usuario.setForeground(Color.WHITE);
-		Usuario.setBounds(360, 434, 46, 14);
+		Usuario.setBounds(655, 446, 46, 14);
 		pantalla.add(Usuario);
 		
 		CampoUsuario = new JTextField();
-		CampoUsuario.setBounds(424, 432, 120, 17);
+		CampoUsuario.setBounds(711, 443, 120, 17);
 		pantalla.add(CampoUsuario);
 		CampoUsuario.setColumns(10);
 		
 		JLabel Contrasena = new JLabel("Contrase\u00F1a");
 		Contrasena.setForeground(Color.WHITE);
-		Contrasena.setBounds(338, 462, 76, 14);
+		Contrasena.setBounds(638, 478, 76, 14);
 		pantalla.add(Contrasena);
 		
 		CampoContra = new JPasswordField();
-		CampoContra.setBounds(424, 460, 120, 18);
+		CampoContra.setBounds(711, 474, 120, 18);
 		pantalla.add(CampoContra);
 		
 		JButton Salir = new JButton("Salir");
@@ -95,7 +93,7 @@ public class Primera extends JFrame {
 				Primera.this.dispose();							
 			}
 		});	
-		Salir.setBounds(466, 516, 89, 23);
+		Salir.setBounds(742, 516, 89, 23);
 		pantalla.add(Salir);
 		
 	
