@@ -33,23 +33,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
-
 import javax.swing.JLayeredPane;
 import javax.swing.JToolBar;
 import javax.swing.JDesktopPane;
 import javax.swing.JComboBox;
 import javax.swing.JTabbedPane;
 import javax.swing.JSplitPane;
+
 import java.awt.Color;
+
 import javax.swing.JToggleButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.JList;
-
 import javax.swing.JTabbedPane;
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 import java.awt.Font;
 
@@ -65,7 +66,7 @@ public class Principal extends JFrame {
 	public Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
-		pantalla = new Fondo("Bingo.jpg");
+		pantalla = new Fondo("/Principal/imagenes/fondoPrincipal.jpg");
 		pantalla.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pantalla);
 		pantalla.setLayout(null);
