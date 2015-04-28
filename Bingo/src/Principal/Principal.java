@@ -59,6 +59,7 @@ public class Principal extends JFrame {
 
 	private JPanel pantalla;
     private JLabel marcador[]=new JLabel[91];
+    private JLabel SacaBolas[]=new JLabel[91];
     private int cont=0;
 
 	
@@ -95,36 +96,54 @@ public class Principal extends JFrame {
 		pantalla.add(Salir);
 		
 
-		JButton btnPartidaNueva = new JButton("Partida Nueva");
-		btnPartidaNueva.setBounds(748, 480, 126, 30);
-		pantalla.add(btnPartidaNueva);
+		JButton PartidaNueva = new JButton("Partida Nueva");
+		PartidaNueva.setBounds(748, 480, 126, 30);
+		pantalla.add(PartidaNueva);
 		
-		JButton btnBolaNueva = new JButton("Bola Nueva");
-		btnBolaNueva.setBounds(629, 480, 109, 70);
-		pantalla.add(btnBolaNueva);
+		JButton BolaNueva = new JButton("Bola Nueva");
+		BolaNueva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {						
+				
+		//Falta sacar la bola bien
+				
+				int a=(int)(Math.random()*90+1);
+				SacaBolas[a]=new JLabel();
+				SacaBolas[a].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
+				SacaBolas[a].setBounds(50, 450, 100, 100);
+				pantalla.add(SacaBolas[a]);
+					
+				
+			}
+		});	
 		
-		JButton btnLinea = new JButton("");
-		btnLinea.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnLinea.png")));
-		btnLinea.setBounds(629, 11, 109, 50);
-		pantalla.add(btnLinea);
 		
-		JButton btnBingo = new JButton("");
-		btnBingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
-		btnBingo.setBounds(765, 11, 109, 50);
-		pantalla.add(btnBingo);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(629, 72, 245, 393);
-		pantalla.add(tabbedPane);
 		
-		JPanel panel = new JPanel();
-		tabbedPane.addTab("Jugador 1", null, panel, null);
+		BolaNueva.setBounds(629, 480, 109, 70);
+		pantalla.add(BolaNueva);
 		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("Jugador 2", null, panel_1, null);
+		JButton Linea = new JButton("");
+		Linea.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnLinea.png")));
+		Linea.setBounds(629, 11, 109, 50);
+		pantalla.add(Linea);
 		
-		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("Jugador 3", null, panel_2, null);
+		JButton Bingo = new JButton("");
+		Bingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
+		Bingo.setBounds(765, 11, 109, 50);
+		pantalla.add(Bingo);
+		
+		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
+		panelPestaña.setBounds(629, 72, 245, 393);
+		pantalla.add(panelPestaña);
+		
+		JPanel pestaña = new JPanel();
+		panelPestaña.addTab("Jugador 1", null, pestaña, null);
+		
+		JPanel pestaña1 = new JPanel();
+		panelPestaña.addTab("Jugador 2", null, pestaña1, null);
+		
+		JPanel pestaña2 = new JPanel();
+		panelPestaña.addTab("Jugador 3", null, pestaña2, null);
 
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
