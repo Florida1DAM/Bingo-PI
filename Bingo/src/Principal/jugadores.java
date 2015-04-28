@@ -104,7 +104,7 @@ public class jugadores extends JFrame {
 				
 					/*
 					 * Si no hay ningun nombre de jugador y/o ningun email, nos aparece un mensaje informativo
-					 * avisandonos de la auscencia de este
+					 * avisandonos de la auscencia de estos
 					 */
 					
 					if (CampoNombre.getText().trim().isEmpty())
@@ -113,7 +113,6 @@ public class jugadores extends JFrame {
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 							jugadores.this.dispose();	
-	
 					}
 					
 					else if(CampoEmail.getText().trim().isEmpty())
