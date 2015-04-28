@@ -73,7 +73,7 @@ public class jugadores extends JFrame {
 		JButton NuevoJugador = new JButton("Nuevo Jugador");
 		NuevoJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+					
 			}
 		});
 		NuevoJugador.setBounds(156, 278, 139, 23);
@@ -103,26 +103,33 @@ public class jugadores extends JFrame {
 				
 				
 					/*
-					 * Si no hay ningun nombre de jugador, nos aparece un mensaje informativo
-					 * avisandonos de la auscencia de este
+					 * Si no hay ningun nombre de jugador y/o ningun email, nos aparece un mensaje informativo
+					 * avisandonos de la auscencia de estos
 					 */
-				
+					
 					if (CampoNombre.getText().trim().isEmpty())
 					{
 						JOptionPane.showMessageDialog(CampoNombre,"No hay ningun jugador");
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 							jugadores.this.dispose();	
-	
+					}																																																											
+					
+					else if(CampoEmail.getText().trim().isEmpty())
+					{
+						JOptionPane.showMessageDialog(CampoEmail,"Introduce un Email");
+						Principal VentPrinc = new Principal();
+						VentPrinc.setVisible (false);
+						jugadores.this.dispose();	
 					}
 					
-					else{
-						 Principal VentPrinc = new Principal();
-							VentPrinc.setVisible (true);
-							jugadores.this.dispose();	
-	
+					else
+					{
+						Principal VentPrinc = new Principal();
+						VentPrinc.setVisible (true);
+						jugadores.this.dispose();
 					}
-								
+					
 
 				
 			}

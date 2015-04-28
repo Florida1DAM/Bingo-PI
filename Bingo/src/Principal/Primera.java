@@ -11,11 +11,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
+
 import javax.swing.JTextField;
 import javax.swing.JProgressBar;
 import javax.swing.JPasswordField;
 
+@SuppressWarnings("unused")
 public class Primera extends JFrame {
 
 	
@@ -53,11 +57,27 @@ public class Primera extends JFrame {
 		
 		JButton Entrar = new JButton("Entrar");
 		Entrar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
+				if(CampoUsuario.getText().trim().isEmpty()){
+					
+				JOptionPane.showMessageDialog(CampoUsuario,"No hay ningun jugador");
 				jugadores VentPrinc = new jugadores();
 				Primera.this.dispose();			
-				VentPrinc.setVisible (true);
-
+				VentPrinc.setVisible (false);
+				}
+			
+				else if (CampoContra.getText().trim().isEmpty()){
+				JOptionPane.showMessageDialog(CampoContra, "Por favor introduzca una contraseña");	
+				jugadores VentPrinc = new jugadores();
+				Primera.this.dispose();			
+				VentPrinc.setVisible (false);
+				}
+				else{
+					jugadores VentPrinc = new jugadores();
+					Primera.this.dispose();			
+					VentPrinc.setVisible (true);
+				}
 			}
 		});	
 		Entrar.setBounds(638, 516, 89, 23);
