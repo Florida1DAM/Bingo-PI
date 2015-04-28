@@ -82,6 +82,7 @@ public class jugadores extends JFrame {
 		JButton EliminarJugador = new JButton("Eliminar Jugador");
 		EliminarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				CampoNombre.setText("");
 			}
 		});
 		EliminarJugador.setBounds(472, 278, 139, 23);

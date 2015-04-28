@@ -6,7 +6,7 @@ public class Corredores {
 
 		
 		//Generado el objeto
-		corredoresDB=ConexionDB.getInstance("localhost","usuarios","root","");
+		corredoresDB=ConexionDB.getInstance("http://91.121.110.152/","Bingo","UsuarioPrueba","prueba");
 
 		if(corredoresDB.connectDB()==true) {
 			System.out.println("CONECTADOS CON EXITO");
