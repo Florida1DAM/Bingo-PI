@@ -67,7 +67,7 @@ public class Primera extends JFrame {
 		
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
-		logo.setBounds(72, 23, 700, 248);
+		logo.setBounds(77, 62, 700, 248);
 		pantalla.add(logo);
 		
 		JLabel Usuario = new JLabel("Usuario");
