@@ -110,7 +110,7 @@ public class jugadores extends JFrame {
 					
 					if (CampoNombre.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoNombre,"No hay ningun jugador");
+						JOptionPane.showMessageDialog(CampoNombre,"Introduzca un jugador");
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 								
@@ -118,7 +118,7 @@ public class jugadores extends JFrame {
 					
 					else if(CampoEmail.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoEmail,"Introduce un Email");
+						JOptionPane.showMessageDialog(CampoEmail,"Introduzca un Email");
 						Principal VentPrinc = new Principal();
 						VentPrinc.setVisible (false);
 							

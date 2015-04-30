@@ -118,7 +118,6 @@ public class Principal extends JFrame {
 		
 		
 		
-		
 		BolaNueva.setBounds(629, 480, 109, 70);
 		pantalla.add(BolaNueva);
 		

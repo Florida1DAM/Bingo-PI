@@ -61,7 +61,7 @@ public class Primera extends JFrame {
 				
 				if (CampoUsuario.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(CampoUsuario,"Introduce usuario");
+					JOptionPane.showMessageDialog(CampoUsuario,"Introduzca un usuario");
 					 jugadores VentPrinc = new jugadores();
 						VentPrinc.setVisible (false);
 							
@@ -69,7 +69,7 @@ public class Primera extends JFrame {
 				
 				else if(CampoContra.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(CampoContra,"Introduce una contraseña");
+					JOptionPane.showMessageDialog(CampoContra,"Introduzca una contraseña");
 					jugadores VentPrinc = new jugadores();
 					VentPrinc.setVisible (false);
 						
