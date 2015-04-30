@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Corredores {
 	static ConexionDB corredoresDB;
 	static modeloCorredores mCorredor;
