@@ -106,13 +106,17 @@ public class Principal extends JFrame {
 				
 		//Falta sacar la bola bien
 				
+				JPanel VentanaBola = new JPanel();
+				VentanaBola.setBounds(40, 450, 105, 105);
+				pantalla.add(VentanaBola);
+				
 				int a=(int)(Math.random()*90+1);
 				SacaBolas[a]=new JLabel();
+				if (SacaBolas[a]!=null){VentanaBola.removeAll();};
 				SacaBolas[a].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
-				SacaBolas[a].setBounds(50, 450, 100, 100);
-				pantalla.add(SacaBolas[a]);
-					
-				
+				SacaBolas[a].setBounds(0, 0, 100, 100);
+				VentanaBola.repaint();
+				VentanaBola.add(SacaBolas[a]);
 			}
 		});	
 		
@@ -144,7 +148,8 @@ public class Principal extends JFrame {
 		
 		JPanel pestaña2 = new JPanel();
 		panelPestaña.addTab("Jugador 3", null, pestaña2, null);
-
+		
+		
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 	}

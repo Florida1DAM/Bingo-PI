@@ -4,9 +4,9 @@ public class Corredores {
 	static ConexionDB corredoresDB;
 	static modeloCorredores mCorredor;
 	
-	public static void main(String[] args) {
+	
 
-		
+	public void conectar(){	
 		//Generado el objeto
 		corredoresDB=ConexionDB.getInstance("http://91.121.110.152/","Bingo","UsuarioPrueba","prueba");
 
