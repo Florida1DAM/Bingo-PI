@@ -24,6 +24,7 @@ public class jugadores extends JFrame {
 	private JLabel Nombre;
 	private JLabel Email;
 	private JTextField CampoEmail;
+	private JButton EliminarJugador;
 
 	
 	
@@ -73,16 +74,16 @@ public class jugadores extends JFrame {
 		JButton NuevoJugador = new JButton("Nuevo Jugador");
 		NuevoJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-					
 			}
 		});
 		NuevoJugador.setBounds(296, 278, 139, 23);
 		pantalla.add(NuevoJugador);
 		
-		JButton EliminarJugador = new JButton("Eliminar Jugador");
+		EliminarJugador = new JButton("Eliminar Jugador");
 		EliminarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CampoNombre.setText("");
+				CampoEmail.setText("");
 			}
 		});
 		EliminarJugador.setBounds(472, 278, 139, 23);

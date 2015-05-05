@@ -28,24 +28,6 @@ public class Primera extends JFrame {
 	private JTextField CampoUsuario;
 	private JPasswordField CampoContra;
 
-	
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Primera frame = new Primera();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-
-
-	
 	public Primera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
