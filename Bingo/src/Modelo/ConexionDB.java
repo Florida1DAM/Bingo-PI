@@ -17,12 +17,12 @@ public class ConexionDB {
 	private String url;
 	
 	//Conexion
-	private Connection conexion = null;// maneja la conexió
+	private static Connection conexion = null;// maneja la conexió
 	
 	//Instancia unica
 	private static ConexionDB instance = null;
 	
-	private ConexionDB(String HOST,String BBDD,String USER,String PASS) {
+	public ConexionDB(String HOST,String BBDD,String USER,String PASS) {
 		this.host=HOST;
 		this.bbdd=BBDD;
 		this.user=USER;
@@ -58,8 +58,8 @@ public class ConexionDB {
 		return true;
 	}
 	
-	public Connection getConexion(){
-		return this.conexion;
+	public static Connection getConexion(){
+		return conexion;
 	}
 
 }

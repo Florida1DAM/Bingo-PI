@@ -15,18 +15,25 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
+import java.util.Iterator;
 
 import javax.swing.JTextField;
 import javax.swing.JProgressBar;
 import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+
+import Modelo.modeloCorredores;
+import Modelo.modeloCorredores;
 
 public class Primera extends JFrame {
 
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel pantalla;
-	private JTextField CampoUsuario;
 	private JPasswordField CampoContra;
+	modeloCorredores usuarios;
+
+	
 
 	public Primera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,15 +48,15 @@ public class Primera extends JFrame {
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if (CampoUsuario.getText().trim().isEmpty())
+				/*if (CampoUsuario.getText().trim().isEmpty())
 				{
 					JOptionPane.showMessageDialog(CampoUsuario,"Introduzca un usuario");
 					 jugadores VentPrinc = new jugadores();
 						VentPrinc.setVisible (false);
 							
-				}
+				}*/
 				
-				else if(CampoContra.getText().trim().isEmpty())
+				if(CampoContra.getText().trim().isEmpty())
 				{
 					JOptionPane.showMessageDialog(CampoContra,"Introduzca una contraseña");
 					jugadores VentPrinc = new jugadores();
@@ -71,19 +78,14 @@ public class Primera extends JFrame {
 		pantalla.add(Entrar);
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logotipo.png")));
-		logo.setBounds(71, 57, 700, 248);
+		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logoBingoNuevo.png")));
+		logo.setBounds(77, 43, 700, 294);
 		pantalla.add(logo);
 		
 		JLabel Usuario = new JLabel("Usuario");
 		Usuario.setForeground(Color.WHITE);
 		Usuario.setBounds(387, 434, 46, 14);
 		pantalla.add(Usuario);
-		
-		CampoUsuario = new JTextField();
-		CampoUsuario.setBounds(443, 432, 120, 17);
-		pantalla.add(CampoUsuario);
-		CampoUsuario.setColumns(10);
 		
 		JLabel Contrasena = new JLabel("Contrase\u00F1a");
 		Contrasena.setForeground(Color.WHITE);
@@ -103,6 +105,20 @@ public class Primera extends JFrame {
 		Salir.setBounds(478, 503, 89, 23);
 		pantalla.add(Salir);
 		
+		JComboBox Desplegable = new JComboBox();
+		Desplegable.setBounds(443, 431, 120, 17);
+		pantalla.add(Desplegable);
+		
+		//Rellenamos JComboBox
+		
+				usuarios=new modeloCorredores();
+				
+				Iterator<String> it=usuarios.getusuarios().iterator();
+				while(it.hasNext()){
+					Desplegable.addItem((String)it.next());
+				}
+				
+				
 	
 
 	}

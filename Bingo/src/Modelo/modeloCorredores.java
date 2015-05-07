@@ -4,46 +4,50 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.mysql.jdbc.ResultSetMetaData;
 
 
 public class modeloCorredores {
 	//DEVOLVER CORREDORES
-	private static String CORREDORES_LIST="SELECT * FROM corredores";
+	private static String USUARIO_SEL="SELECT * FROM Jugadores";
+	private static String USUARIO_COL="nombre";
 	
-	private static String ID_COL="id";
-	private static String NOMBRE_COL="nombre";
-	private static String APELLIDOS_COL="apellidos";
-	private static String TIME_COL="tiempo_medio";
-	
-	private static String COLUMNAS[]={ID_COL,NOMBRE_COL,APELLIDOS_COL,TIME_COL};
 	
 	//Conexion
 	private Connection conexion = null;// maneja la conexión
 	Statement instruccion = null;
 	ResultSet conjuntoResultados = null;
 	
-	public modeloCorredores(Connection conexion) {
-		this.conexion=conexion;
+	
+	//usuariosDB
+	private ArrayList<String> usuarios=null;
+	
+	
+	
+	public modeloCorredores() {
+		conexion=ConexionDB.getConexion();
+		usuarios= new ArrayList<String>();
 	}
 	
-	public void getDatosCorredores(){
+	
+	
+	public ArrayList getusuarios(){
 		try{
 			instruccion = this.conexion.createStatement();
-			conjuntoResultados = instruccion.executeQuery(CORREDORES_LIST);
+			conjuntoResultados = instruccion.executeQuery(USUARIO_SEL);
 
 			//Listaremos por pantalla los datos
 			while( conjuntoResultados.next() ) {
-				System.out.print(conjuntoResultados.getInt(ID_COL)+";");
-				System.out.print(conjuntoResultados.getString(NOMBRE_COL)+";");
-				System.out.print(conjuntoResultados.getString(APELLIDOS_COL)+";");
-				System.out.println(conjuntoResultados.getTime(TIME_COL));
+				usuarios.add (conjuntoResultados.getString(USUARIO_COL));
 			}// fin de while
+			return usuarios;
 		}
 		catch( SQLException excepcionSql ) 
 		{
 			excepcionSql.printStackTrace();
+			return usuarios;
 		}
 		finally{
 			try{
