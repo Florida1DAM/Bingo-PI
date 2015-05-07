@@ -44,13 +44,13 @@ public class Primera extends JFrame {
 		pantalla.setLayout(null);
 		setTitle("Bingo twist");
 		
-		JButton Entrar = new JButton("Entrar");
+		JButton Entrar = new JButton("Enter");
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				/*if (CampoUsuario.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(CampoUsuario,"Introduzca un usuario");
+					JOptionPane.showMessageDialog(CampoUsuario,"Please Introduce an Username");
 					 jugadores VentPrinc = new jugadores();
 						VentPrinc.setVisible (false);
 							
@@ -58,7 +58,7 @@ public class Primera extends JFrame {
 				
 				if(CampoContra.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(CampoContra,"Introduzca una contraseña");
+					JOptionPane.showMessageDialog(CampoContra,"Please Introduce a Password");
 					jugadores VentPrinc = new jugadores();
 					VentPrinc.setVisible (false);
 						
@@ -81,22 +81,25 @@ public class Primera extends JFrame {
 		logo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/logoBingoNuevo.png")));
 		logo.setBounds(77, 43, 700, 294);
 		pantalla.add(logo);
+	
+
+		JLabel Username = new JLabel("Username");
+		Username.setForeground(Color.WHITE);
+		Username.setBounds(373, 434, 60, 14);
+		pantalla.add(Username);
+	
+
 		
-		JLabel Usuario = new JLabel("Usuario");
-		Usuario.setForeground(Color.WHITE);
-		Usuario.setBounds(387, 434, 46, 14);
-		pantalla.add(Usuario);
-		
-		JLabel Contrasena = new JLabel("Contrase\u00F1a");
-		Contrasena.setForeground(Color.WHITE);
-		Contrasena.setBounds(370, 459, 76, 14);
-		pantalla.add(Contrasena);
+		JLabel Password = new JLabel("Password");
+		Password.setForeground(Color.WHITE);
+		Password.setBounds(373, 462, 63, 14);
+		pantalla.add(Password);
 		
 		CampoContra = new JPasswordField();
 		CampoContra.setBounds(443, 460, 120, 18);
 		pantalla.add(CampoContra);
 		
-		JButton Salir = new JButton("Salir");
+		JButton Salir = new JButton("Leave");
 		Salir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
 				Primera.this.dispose();							
