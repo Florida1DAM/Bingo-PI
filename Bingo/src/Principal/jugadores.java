@@ -45,7 +45,7 @@ public class jugadores extends JFrame {
 		IntroduzcaJugadores.setBounds(241, 11, 471, 80);
 		pantalla.add(IntroduzcaJugadores);
 				
-		Nombre = new JLabel("Nombre");
+		Nombre = new JLabel("Name");
 		Nombre.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		Nombre.setForeground(Color.BLACK);
 		Nombre.setVerticalAlignment(SwingConstants.TOP);
@@ -71,7 +71,7 @@ public class jugadores extends JFrame {
 
 		
 		
-		JButton NuevoJugador = new JButton("Nuevo Jugador");
+		JButton NuevoJugador = new JButton("New Player");
 		NuevoJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -79,7 +79,7 @@ public class jugadores extends JFrame {
 		NuevoJugador.setBounds(296, 278, 139, 23);
 		pantalla.add(NuevoJugador);
 		
-		EliminarJugador = new JButton("Eliminar Jugador");
+		EliminarJugador = new JButton("Delete Player");
 		EliminarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CampoNombre.setText("");
@@ -89,7 +89,7 @@ public class jugadores extends JFrame {
 		EliminarJugador.setBounds(472, 278, 139, 23);
 		pantalla.add(EliminarJugador);
 		
-		JButton Salir = new JButton("Salir");
+		JButton Salir = new JButton("Leave");
 		Salir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
 				jugadores.this.dispose();						
@@ -111,7 +111,7 @@ public class jugadores extends JFrame {
 					
 					if (CampoNombre.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoNombre,"No hay ningun jugador");
+						JOptionPane.showMessageDialog(CampoNombre,"Please Introduce a Player");
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 								
@@ -119,7 +119,7 @@ public class jugadores extends JFrame {
 					
 					else if(CampoEmail.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoEmail,"Introduce un Email");
+						JOptionPane.showMessageDialog(CampoEmail,"Please Introduce an Email");
 						Principal VentPrinc = new Principal();
 						VentPrinc.setVisible (false);
 							
@@ -141,7 +141,7 @@ public class jugadores extends JFrame {
 		comienza.setBounds(361, 365, 195, 72);
 		pantalla.add(comienza);
 		
-		JButton Atras = new JButton("Atras");		
+		JButton Atras = new JButton("Back");		
 		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Primera VentPrinc = new Primera();

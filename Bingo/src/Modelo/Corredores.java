@@ -4,11 +4,13 @@ public class Corredores {
 	static ConexionDB corredoresDB;
 	static modeloCorredores mCorredor;
 	
-	public static void main(String[] args) {
+	
 
-		
+	public void conectar(){	
 		//Generado el objeto
-		corredoresDB=ConexionDB.getInstance("localhost","bingo","UsuarioPrueba","prueba");
+
+
+		corredoresDB=ConexionDB.getInstance("localhost","Bingo","UsuarioPrueba","prueba");
 
 		if(corredoresDB.connectDB()==true) {
 			System.out.println("CONECTADOS CON EXITO");
