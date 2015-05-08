@@ -30,6 +30,8 @@ public class jugadores extends JFrame {
 	
 	
 	public jugadores() {
+		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		pantalla = new Fondo("/Principal/imagenes/fondoJugadores.jpg");
