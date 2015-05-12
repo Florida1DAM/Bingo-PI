@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import Modelo.*;
 
 public class jugadores extends JFrame {
 
@@ -145,6 +148,7 @@ public class jugadores extends JFrame {
 		
 		JButton Atras = new JButton("Back");		
 		Atras.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent arg0) {
 				Primera VentPrinc = new Primera();
 				VentPrinc.setVisible (true);
