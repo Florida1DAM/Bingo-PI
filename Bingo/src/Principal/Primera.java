@@ -1,5 +1,11 @@
 package Principal;
 
+<<<<<<< HEAD
+=======
+import java.awt.BorderLayout;
+
+import java.awt.EventQueue;
+>>>>>>> refs/remotes/origin/master
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,6 +37,9 @@ public class Primera extends JFrame {
 	
 
 	public Primera() {
+		
+		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		pantalla = new Fondo("/Principal/imagenes/fondoPrimera.png");
@@ -45,9 +54,17 @@ public class Primera extends JFrame {
 				
 				verificacion=new ModeloVerificacion();
 				
+<<<<<<< HEAD
 				if  (CampoContra.getText().trim().isEmpty())
 					{
 						JOptionPane.showMessageDialog(CampoContra,"Please Introduce a Password");
+=======
+				if(CampoContra.getText().trim().isEmpty())
+				{
+					JOptionPane.showMessageDialog(CampoContra,"Please Enter a Password");
+					jugadores VentPrinc = new jugadores();
+					VentPrinc.setVisible (false);
+>>>>>>> refs/remotes/origin/master
 						
 					}
 				else{

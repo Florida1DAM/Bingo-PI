@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -53,7 +54,10 @@ public class modeloCorredores {
 			try{
 				conjuntoResultados.close();
 				instruccion.close();
+<<<<<<< HEAD
 				//conexion.close();
+=======
+>>>>>>> refs/remotes/origin/master
 			}
 			catch( SQLException excepcionSql ) 
 			{

@@ -59,8 +59,11 @@ public class Principal extends JFrame {
 
 	private JPanel pantalla;
     private JLabel marcador[]=new JLabel[91];
-    private JLabel SacaBolas[]=new JLabel[91];
+    private JLabel SacaBolas=new JLabel();
+    private int a=0;
     private int cont=0;
+    private int numero[]= new int [90];
+    
 
 	
 	
@@ -82,10 +85,12 @@ public class Principal extends JFrame {
 		marcador[cont].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Rojos/"+cont+".png"))));
 		marcador[cont].setBounds(10+j*60, 10+i*45, 38, 38);
 		pantalla.add(marcador[cont]);
+		SacaBolas=new JLabel();
+		SacaBolas.setBounds(40,450, 100, 100);
 		}}
-
 		
-		JButton Salir = new JButton("Exit");
+		
+		JButton Salir = new JButton("Salir");
 		Salir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
 				Principal.this.dispose();						
@@ -96,29 +101,30 @@ public class Principal extends JFrame {
 		pantalla.add(Salir);
 		
 
-		JButton PartidaNueva = new JButton("New Game");
+		JButton PartidaNueva = new JButton("Partida Nueva");
 		PartidaNueva.setBounds(748, 480, 126, 30);
 		pantalla.add(PartidaNueva);
 		
-		JButton BolaNueva = new JButton("New Ball");
+		JButton BolaNueva = new JButton("Bola Nueva");
 		BolaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
 				
-		//Falta sacar la bola bien
-				
-				JPanel VentanaBola = new JPanel();
-				VentanaBola.setBounds(40, 450, 105, 105);
-				pantalla.add(VentanaBola);
-				
-				int a=(int)(Math.random()*90+1);
-				SacaBolas[a]=new JLabel();
-				if (SacaBolas[a]!=null){VentanaBola.removeAll();};
-				SacaBolas[a].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
-				SacaBolas[a].setBounds(0, 0, 100, 100);
-				VentanaBola.repaint();
-				VentanaBola.add(SacaBolas[a]);
-			}
-		});	
+				do
+				a=(int)(Math.random()*90+1);
+				while (numero[a]!=0);
+				cont=cont+1;
+				if (SacaBolas!=null){SacaBolas.removeAll();}
+				pantalla.repaint();
+				marcador[a].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Azules/"+a+".png"))));
+				SacaBolas.setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
+				pantalla.add(SacaBolas);
+				pantalla.repaint();
+				if (cont==90){
+					cont=0;
+					for (int i=0;i<=90;i++){numero[i]=0;}
+					}else{numero[a]=1;}
+			}}
+		);
 		
 		
 		
@@ -140,16 +146,16 @@ public class Principal extends JFrame {
 		pantalla.add(panelPestaña);
 		
 		JPanel pestaña = new JPanel();
-		panelPestaña.addTab("Player 1", null, pestaña, null);
+		panelPestaña.addTab("Jugador 1", null, pestaña, null);
 		
 		JPanel pestaña1 = new JPanel();
-		panelPestaña.addTab("Player 2", null, pestaña1, null);
+		panelPestaña.addTab("Jugador 2", null, pestaña1, null);
 		
 		JPanel pestaña2 = new JPanel();
-		panelPestaña.addTab("Player 3", null, pestaña2, null);
+		panelPestaña.addTab("Jugador 3", null, pestaña2, null);
 		
-		
-	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
-	}
-}
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBounds(32, 53, 157, -26);
+		pantalla.add(layeredPane);
+	}}
+
