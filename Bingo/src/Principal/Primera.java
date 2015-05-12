@@ -1,11 +1,9 @@
 package Principal;
 
-<<<<<<< HEAD
-=======
 import java.awt.BorderLayout;
 
 import java.awt.EventQueue;
->>>>>>> refs/remotes/origin/master
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
