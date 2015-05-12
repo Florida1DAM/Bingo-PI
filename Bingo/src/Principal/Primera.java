@@ -54,17 +54,12 @@ public class Primera extends JFrame {
 				
 				verificacion=new ModeloVerificacion();
 				
-<<<<<<< HEAD
-				if  (CampoContra.getText().trim().isEmpty())
-					{
-						JOptionPane.showMessageDialog(CampoContra,"Please Introduce a Password");
-=======
 				if(CampoContra.getText().trim().isEmpty())
 				{
 					JOptionPane.showMessageDialog(CampoContra,"Please Enter a Password");
 					jugadores VentPrinc = new jugadores();
 					VentPrinc.setVisible (false);
->>>>>>> refs/remotes/origin/master
+
 						
 					}
 				else{

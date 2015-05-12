@@ -54,10 +54,9 @@ public class modeloCorredores {
 			try{
 				conjuntoResultados.close();
 				instruccion.close();
-<<<<<<< HEAD
+
 				//conexion.close();
-=======
->>>>>>> refs/remotes/origin/master
+
 			}
 			catch( SQLException excepcionSql ) 
 			{
