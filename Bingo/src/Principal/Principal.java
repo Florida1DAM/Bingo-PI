@@ -62,12 +62,14 @@ public class Principal extends JFrame {
     private JLabel SacaBolas=new JLabel();
     private int a=0;
     private int cont=0;
-    private int numero[]= new int [90];
+    private int numero[]= new int [91];
     
 
 	
 	
 	public Principal() {
+		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		pantalla = new Fondo("/Principal/imagenes/fondoPrincipal.jpg");
