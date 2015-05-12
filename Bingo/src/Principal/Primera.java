@@ -1,14 +1,11 @@
 package Principal;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -17,12 +14,10 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.Iterator;
 
-import javax.swing.JTextField;
-import javax.swing.JProgressBar;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
 
-import Modelo.modeloCorredores;
+import Modelo.ModeloVerificacion;
 import Modelo.modeloCorredores;
 
 public class Primera extends JFrame {
@@ -30,9 +25,9 @@ public class Primera extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel pantalla;
-	private JPasswordField CampoContra;
+	public static JPasswordField CampoContra;
 	modeloCorredores usuarios;
-
+	ModeloVerificacion verificacion;
 	
 
 	public Primera() {
@@ -48,30 +43,25 @@ public class Primera extends JFrame {
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				/*if (CampoUsuario.getText().trim().isEmpty())
-				{
-					JOptionPane.showMessageDialog(CampoUsuario,"Please Introduce an Username");
-					 jugadores VentPrinc = new jugadores();
-						VentPrinc.setVisible (false);
-							
-				}*/
+				verificacion=new ModeloVerificacion();
 				
-				if(CampoContra.getText().trim().isEmpty())
-				{
-					JOptionPane.showMessageDialog(CampoContra,"Please Introduce a Password");
-					jugadores VentPrinc = new jugadores();
-					VentPrinc.setVisible (false);
+				if  (CampoContra.getText().trim().isEmpty())
+					{
+						JOptionPane.showMessageDialog(CampoContra,"Please Introduce a Password");
 						
+					}
+				else{
+					if  (CampoContra.equals(verificacion));
+					System.out.println("Contraseña correcta"); 
+					Primera.this.dispose();
+					jugadores VentPrinc1 = new jugadores();		
+					VentPrinc1.setVisible (true);
+					
 				}
+
 				
-				else
-				
-				{
-				jugadores VentPrinc = new jugadores();
-				Primera.this.dispose();			
-				VentPrinc.setVisible (true);
-				}
 			}
+			
 			
 		});	
 		Entrar.setBounds(357, 503, 89, 23);
@@ -105,12 +95,14 @@ public class Primera extends JFrame {
 				Primera.this.dispose();							
 			}
 		});	
+		
 		Salir.setBounds(478, 503, 89, 23);
 		pantalla.add(Salir);
 		
 		JComboBox Desplegable = new JComboBox();
 		Desplegable.setBounds(443, 431, 120, 17);
 		pantalla.add(Desplegable);
+		
 		
 		//Rellenamos JComboBox
 		
