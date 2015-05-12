@@ -121,9 +121,9 @@ public class Principal extends JFrame {
 				SacaBolas.setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
 				pantalla.add(SacaBolas);
 				pantalla.repaint();
-				if (cont==90){
+				if (cont==91){
 					cont=0;
-					for (int i=0;i<=90;i++){numero[i]=0;}
+					for (int i=0;i<=91;i++){numero[i]=0;}
 					}else{numero[a]=1;}
 			}}
 		);

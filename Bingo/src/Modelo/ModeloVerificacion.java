@@ -1,7 +1,7 @@
 package Modelo;
 
-import java.sql.Connection;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import com.mysql.jdbc.ResultSetMetaData;
 
 
-public class modeloCorredores {
+public class ModeloVerificacion {
 	//DEVOLVER CORREDORES
-	private static String USUARIO_SEL="SELECT * FROM Jugadores";
-	private static String USUARIO_COL="nombre";
+	private static String CONTRA_SEL="SELECT * FROM Jugadores";
+	private static String CONTRA_COL="CONTRASENA";
 	
 	
 	//Conexion
@@ -23,40 +23,38 @@ public class modeloCorredores {
 	
 	
 	//usuariosDB
-	private ArrayList<String> usuarios=null;
+	private ArrayList<String> verificacion=null;
 	
 	
 	
-	public modeloCorredores() {
+	public ModeloVerificacion() {
 		conexion=ConexionDB.getConexion();
-		usuarios= new ArrayList<String>();
+		verificacion= new ArrayList<String>();
 	}
 	
 	
 	
-	public ArrayList getusuarios(){
+	public ArrayList getVerificacion(){
 		try{
 			instruccion = this.conexion.createStatement();
-			conjuntoResultados = instruccion.executeQuery(USUARIO_SEL);
+			conjuntoResultados = instruccion.executeQuery(CONTRA_SEL);
 
 			//Listaremos por pantalla los datos
 			while( conjuntoResultados.next() ) {
-				usuarios.add (conjuntoResultados.getString(USUARIO_COL));
+				verificacion.add (conjuntoResultados.getString(CONTRA_COL));
 			}// fin de while
-			return usuarios;
+			return verificacion;
 		}
 		catch( SQLException excepcionSql ) 
 		{
 			excepcionSql.printStackTrace();
-			return usuarios;
+			return verificacion;
 		}
 		finally{
 			try{
 				conjuntoResultados.close();
 				instruccion.close();
-
 				//conexion.close();
-
 			}
 			catch( SQLException excepcionSql ) 
 			{
