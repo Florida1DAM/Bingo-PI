@@ -116,7 +116,7 @@ public class jugadores extends JFrame {
 					
 					if (CampoNombre.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoNombre,"Please Introduce a Player");
+						JOptionPane.showMessageDialog(CampoNombre,"Please Enter a Player");
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 								
@@ -124,7 +124,7 @@ public class jugadores extends JFrame {
 					
 					else if(CampoEmail.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoEmail,"Please Introduce an Email");
+						JOptionPane.showMessageDialog(CampoEmail,"Please Enter an Email");
 						Principal VentPrinc = new Principal();
 						VentPrinc.setVisible (false);
 							
