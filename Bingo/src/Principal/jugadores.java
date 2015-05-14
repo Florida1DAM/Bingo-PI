@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -28,11 +29,14 @@ public class jugadores extends JFrame {
 	private JLabel Email;
 	private JTextField CampoEmail;
 	private JButton EliminarJugador;
-
+	int numeroJugadores=0;
+	private int cont=0;
+	private ArrayList<String> nombreJugador=new ArrayList<String>();
 	
 	
 	
 	public jugadores() {
+		
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,6 +83,7 @@ public class jugadores extends JFrame {
 		JButton NuevoJugador = new JButton("New Player");
 		NuevoJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ponerJugador();
 			}
 		});
 		NuevoJugador.setBounds(296, 278, 139, 23);
@@ -117,7 +122,7 @@ public class jugadores extends JFrame {
 					if (CampoNombre.getText().trim().isEmpty())
 					{
 						JOptionPane.showMessageDialog(CampoNombre,"Please Enter a Player");
-						 Principal VentPrinc = new Principal();
+						 Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
 							VentPrinc.setVisible (false);
 								
 					}
@@ -125,14 +130,15 @@ public class jugadores extends JFrame {
 					else if(CampoEmail.getText().trim().isEmpty())
 					{
 						JOptionPane.showMessageDialog(CampoEmail,"Please Enter an Email");
-						Principal VentPrinc = new Principal();
+						Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
 						VentPrinc.setVisible (false);
 							
 					}
 					
 					else
 					{
-						Principal VentPrinc = new Principal();
+						ponerJugador();
+						Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
 						VentPrinc.setVisible (true);
 						jugadores.this.dispose();
 					}
@@ -158,5 +164,21 @@ public class jugadores extends JFrame {
 		});				
 		Atras.setBounds(85, 503, 126, 29);
 		pantalla.add(Atras);
+	}
+	public void ponerJugador(){
+		getNombreJugador().add(CampoNombre.getText());
+		numeroJugadores=numeroJugadores+1;
+		CampoNombre.setText("");
+		CampoEmail.setText("");
+		
+	}
+	public int getNumeroJugadores(){
+		return numeroJugadores;
+	}
+	public ArrayList<String> getNombreJugador() {
+		return nombreJugador;
+	}
+	public void setNombreJugador(ArrayList<String> nombreJugador) {
+		this.nombreJugador = nombreJugador;
 	}
 }
