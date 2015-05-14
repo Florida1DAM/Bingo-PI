@@ -34,6 +34,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.JDesktopPane;
 import javax.swing.JComboBox;
@@ -51,6 +52,8 @@ import javax.swing.JList;
 import javax.swing.JTabbedPane;
 import javax.swing.border.LineBorder;
 
+import Modelo.ModeloVerificacion;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -65,7 +68,12 @@ public class Principal extends JFrame {
     private int cont=0;
     private int numero[]= new int [91];
     
+
 	public Principal(int numeroJugadores, ArrayList nombreJugadores) {
+		setResizable(false);
+		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
+		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		pantalla = new Fondo("/Principal/imagenes/fondoPrincipal.jpg");
@@ -100,6 +108,10 @@ public class Principal extends JFrame {
 		
 
 		JButton PartidaNueva = new JButton("Partida Nueva");
+		PartidaNueva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		PartidaNueva.setBounds(748, 480, 126, 30);
 		pantalla.add(PartidaNueva);
 		
@@ -134,11 +146,22 @@ public class Principal extends JFrame {
 		
 		JButton Linea = new JButton("");
 		Linea.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnLinea.png")));
+		
+		Linea.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {						
+				JOptionPane.showMessageDialog(Linea, "Han cantado Linea!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/icono.png"));			
+			}
+		});	
 		Linea.setBounds(629, 11, 109, 50);
 		pantalla.add(Linea);
 		
 		JButton Bingo = new JButton("");
 		Bingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
+		Bingo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {						
+				JOptionPane.showMessageDialog(Linea, "Han cantado Bingo!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/icono.png"));					
+			}
+		});	
 		Bingo.setBounds(765, 11, 109, 50);
 		pantalla.add(Bingo);
 		
@@ -148,9 +171,10 @@ public class Principal extends JFrame {
 		
 		for (int i=0;i<numeroJugadores;i++){
 		JPanel pestaña = new JPanel();
+
 		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
 		}
-		
+
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(32, 53, 157, -26);
 		pantalla.add(layeredPane);

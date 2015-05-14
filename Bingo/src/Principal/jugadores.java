@@ -36,7 +36,7 @@ public class jugadores extends JFrame {
 	
 	
 	public jugadores() {
-		
+		setResizable(false);
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
