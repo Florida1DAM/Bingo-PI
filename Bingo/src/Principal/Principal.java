@@ -56,6 +56,7 @@ import Modelo.ModeloVerificacion;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 
 
 public class Principal extends JFrame {
@@ -68,12 +69,17 @@ public class Principal extends JFrame {
     private int numero[]= new int [91];
     
 
-	
-	
-	public Principal() {
+
+
+
+
+	public Principal(int numeroJugadores, ArrayList nombreJugadores) {
+		setResizable(false);
 		setEnabled(false);
+
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		pantalla = new Fondo("/Principal/imagenes/fondoPrincipal.jpg");
@@ -171,18 +177,15 @@ public class Principal extends JFrame {
 		panelPestaña.setBounds(629, 72, 245, 393);
 		pantalla.add(panelPestaña);
 		
+		for (int i=0;i<numeroJugadores;i++){
 		JPanel pestaña = new JPanel();
-		
-		panelPestaña.addTab("Jugador 1", null, pestaña, null);
-		
-		JPanel pestaña1 = new JPanel();
-		panelPestaña.addTab("Jugador 2", null, pestaña1, null);
-		
-		JPanel pestaña2 = new JPanel();
-		panelPestaña.addTab("Jugador 3", null, pestaña2, null);
-		
+
+		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
+		}
+
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(32, 53, 157, -26);
 		pantalla.add(layeredPane);
-	}}
+	}
+	}
 

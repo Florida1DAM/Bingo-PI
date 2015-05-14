@@ -34,7 +34,11 @@ public class Primera extends JFrame {
 	
 
 	public Primera() {
+
 		setEnabled(false);
+
+		setResizable(false);
+
 		
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		

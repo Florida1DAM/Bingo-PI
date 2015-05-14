@@ -12,9 +12,7 @@ import com.mysql.jdbc.ResultSetMetaData;
 
 public class ModeloVerificacion {
 	//DEVOLVER CORREDORES
-	//Desplegable=new Primera();
-	
-	private static String CONTRA_SEL="SELECT * FROM Jugadores where jugador=Desplegable";
+	private static String CONTRA_SEL="SELECT * FROM Jugadores";
 	private static String CONTRA_COL="CONTRASENA";
 	
 	
