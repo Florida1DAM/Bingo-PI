@@ -16,6 +16,7 @@ public class Final extends JFrame {
 	
 	
 	public Final() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 90, 900, 600);
 		contentPane = new Fondo("Bingo.jpg");
