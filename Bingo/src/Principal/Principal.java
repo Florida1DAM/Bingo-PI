@@ -71,6 +71,7 @@ public class Principal extends JFrame {
 	
 	
 	public Principal() {
+		setResizable(false);
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
