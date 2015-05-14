@@ -25,14 +25,13 @@ public class jugadores extends JFrame {
 	private JPanel pantalla;
 	private JTextField CampoNombre;
 	private JLabel Nombre;
-	private JLabel Email;
-	private JTextField CampoEmail;
 	private JButton EliminarJugador;
 
 	
 	
 	
 	public jugadores() {
+		setResizable(false);
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,33 +49,21 @@ public class jugadores extends JFrame {
 		IntroduzcaJugadores.setBounds(241, 11, 471, 80);
 		pantalla.add(IntroduzcaJugadores);
 				
-		Nombre = new JLabel("Name");
+		Nombre = new JLabel("CUAL ES TU NICK");
 		Nombre.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		Nombre.setForeground(Color.BLACK);
 		Nombre.setVerticalAlignment(SwingConstants.TOP);
-		Nombre.setBounds(339, 179, 96, 29);
+		Nombre.setBounds(248, 179, 187, 29);
 		pantalla.add(Nombre);
 		
 		CampoNombre = new JTextField();
-		CampoNombre.setBounds(445, 185, 149, 20);
+		CampoNombre.setBounds(426, 185, 149, 20);
 		pantalla.add(CampoNombre);
 		CampoNombre.setColumns(10);
-		
-		Email = new JLabel("E-Mail");
-		Email.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		Email.setVerticalAlignment(SwingConstants.TOP);
-		Email.setForeground(Color.BLACK);
-		Email.setBounds(349, 224, 73, 29);
-		pantalla.add(Email);
-		
-		CampoEmail = new JTextField();
-		CampoEmail.setColumns(10);
-		CampoEmail.setBounds(445, 230, 149, 20);
-		pantalla.add(CampoEmail);
 
 		
 		
-		JButton NuevoJugador = new JButton("New Player");
+		JButton NuevoJugador = new JButton("Add New Player");
 		NuevoJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -88,7 +75,7 @@ public class jugadores extends JFrame {
 		EliminarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CampoNombre.setText("");
-				CampoEmail.setText("");
+				
 			}
 		});
 		EliminarJugador.setBounds(472, 278, 139, 23);
@@ -116,19 +103,13 @@ public class jugadores extends JFrame {
 					
 					if (CampoNombre.getText().trim().isEmpty())
 					{
-						JOptionPane.showMessageDialog(CampoNombre,"Please Enter a Player");
+						JOptionPane.showMessageDialog(null,"Please Enter a Player", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));
 						 Principal VentPrinc = new Principal();
 							VentPrinc.setVisible (false);
 								
 					}
 					
-					else if(CampoEmail.getText().trim().isEmpty())
-					{
-						JOptionPane.showMessageDialog(CampoEmail,"Please Enter an Email");
-						Principal VentPrinc = new Principal();
-						VentPrinc.setVisible (false);
-							
-					}
+					
 					
 					else
 					{

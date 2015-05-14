@@ -71,6 +71,7 @@ public class Principal extends JFrame {
 	
 	
 	public Principal() {
+		setEnabled(false);
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -148,7 +149,7 @@ public class Principal extends JFrame {
 		
 		Linea.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
-				JOptionPane.showMessageDialog(Linea, "Han cantado Linea!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/icono.png"));			
+				JOptionPane.showMessageDialog(null, "Han cantado Linea!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));			
 			}
 		});	
 		Linea.setBounds(629, 11, 109, 50);
@@ -158,7 +159,9 @@ public class Principal extends JFrame {
 		Bingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
 		Bingo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
-				JOptionPane.showMessageDialog(Linea, "Han cantado Bingo!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/icono.png"));					
+				setBounds(200, 90, 900, 600);
+				JOptionPane.showMessageDialog(null, "Han cantado Bingo!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));	
+				setBounds(200, 90, 900, 600);
 			}
 		});	
 		Bingo.setBounds(765, 11, 109, 50);

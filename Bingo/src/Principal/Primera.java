@@ -1,7 +1,6 @@
 package Principal;
 
 import java.awt.BorderLayout;
-
 import java.awt.EventQueue;
 
 import java.awt.event.ActionEvent;
@@ -35,6 +34,7 @@ public class Primera extends JFrame {
 	
 
 	public Primera() {
+		setEnabled(false);
 		
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
@@ -54,7 +54,7 @@ public class Primera extends JFrame {
 				
 				if(CampoContra.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(CampoContra,"Please Enter a Password");
+					JOptionPane.showMessageDialog(null,"Please Enter a Password", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));
 					jugadores VentPrinc = new jugadores();
 					VentPrinc.setVisible (false);
 
