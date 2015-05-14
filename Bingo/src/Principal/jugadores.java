@@ -34,9 +34,7 @@ public class jugadores extends JFrame {
 	
 	
 
-	public jugadores() {
-		setResizable(false);
-
+	
 	public jugadores() {
 		setResizable(false);
 
@@ -114,7 +112,7 @@ public class jugadores extends JFrame {
 					{
 
 						JOptionPane.showMessageDialog(null,"Please Enter a Player", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));
-						 Principal VentPrinc = new Principal();
+						 Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
 
 							VentPrinc.setVisible (false);
 								
