@@ -57,6 +57,7 @@ import Modelo.ModeloVerificacion;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.BoxLayout;
 
 
 public class Principal extends JFrame {
@@ -166,6 +167,7 @@ public class Principal extends JFrame {
 		pantalla.add(Bingo);
 		
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
+		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		panelPestaña.setBounds(629, 72, 245, 393);
 		pantalla.add(panelPestaña);
 		
@@ -178,6 +180,15 @@ public class Principal extends JFrame {
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(32, 53, 157, -26);
 		pantalla.add(layeredPane);
+		layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
+		
+		JPanel panel = new JPanel();
+		layeredPane.add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 89, 23);
+		panel.add(btnNewButton);
 	}
 	}
 
