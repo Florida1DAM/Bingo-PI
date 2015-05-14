@@ -65,7 +65,7 @@ public class Principal extends JFrame {
     private JLabel SacaBolas=new JLabel();
     private int a=0;
     private int cont=0;
-    private int numero[]= new int [90];
+    private int numero[]= new int [91];
     
 
 	
@@ -105,13 +105,17 @@ public class Principal extends JFrame {
 		
 
 		JButton PartidaNueva = new JButton("Partida Nueva");
+		PartidaNueva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		PartidaNueva.setBounds(748, 480, 126, 30);
 		pantalla.add(PartidaNueva);
 		
 		JButton BolaNueva = new JButton("Bola Nueva");
 		BolaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
-				
+				if (cont>=90){cont=0;};
 				do
 				a=(int)(Math.random()*90+1);
 				while (numero[a]!=0);
@@ -122,9 +126,12 @@ public class Principal extends JFrame {
 				SacaBolas.setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Bolas/bolaBingo"+a+".png"))));
 				pantalla.add(SacaBolas);
 				pantalla.repaint();
-				if (cont==91){
+				if (cont==90){
 					cont=0;
-					for (int i=0;i<=91;i++){numero[i]=0;}
+					for (int i=1;i<91;i++){numero[i]=0;
+					marcador[i].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Rojos/"+i+".png"))));
+					pantalla.repaint();}
+					for (int i=1;i<91;i++){numero[i]=0;}
 					}else{numero[a]=1;}
 			}}
 		);
