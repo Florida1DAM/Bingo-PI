@@ -102,6 +102,10 @@ public class Principal extends JFrame {
 		
 
 		JButton PartidaNueva = new JButton("Partida Nueva");
+		PartidaNueva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		PartidaNueva.setBounds(748, 480, 126, 30);
 		pantalla.add(PartidaNueva);
 		
