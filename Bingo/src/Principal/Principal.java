@@ -68,6 +68,7 @@ public class Principal extends JFrame {
     private int a=0;
     private int cont=0;
     private int numero[]= new int [91];
+    private int numeroCartones=3;
     
 
 
@@ -75,8 +76,8 @@ public class Principal extends JFrame {
 
 
 	public Principal(int numeroJugadores, ArrayList nombreJugadores) {
-		setResizable(false);
-		setEnabled(false);
+		setResizable(true);
+		setEnabled(true);
 
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
@@ -175,28 +176,17 @@ public class Principal extends JFrame {
 		pantalla.add(Bingo);
 		
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
-		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		panelPestaña.setBounds(629, 72, 245, 393);
+		panelPestaña.setBounds(606, 45, 245, 393);
 		pantalla.add(panelPestaña);
 		
 		for (int i=0;i<numeroJugadores;i++){
-		JPanel pestaña = new JPanel();
-
-		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
+				JPanel layeredPane = new JPanel();
+				panelPestaña.addTab((String)nombreJugadores.get(i), null, layeredPane, null);
+				layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
+				for (int j=1;j<=numeroCartones;j++){
+					JLabel pestaña = new JLabel();
+					panelPestaña.add(""+j, pestaña);}
 		}
-
-		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(32, 53, 157, -26);
-		pantalla.add(layeredPane);
-		layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
-		
-		JPanel panel = new JPanel();
-		layeredPane.add(panel);
-		panel.setLayout(null);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(0, 0, 89, 23);
-		panel.add(btnNewButton);
 	}
 	}
 

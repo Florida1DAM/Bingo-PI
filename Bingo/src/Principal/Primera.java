@@ -35,7 +35,7 @@ public class Primera extends JFrame {
 
 	public Primera() {
 
-		setEnabled(false);
+		setEnabled(true);
 
 		setResizable(false);
 
