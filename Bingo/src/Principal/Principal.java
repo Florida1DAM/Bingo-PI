@@ -118,6 +118,7 @@ public class Principal extends JFrame {
 		JButton PartidaNueva = new JButton("Partida Nueva");
 		PartidaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				reiniciar();			
 			}
 		});
 		PartidaNueva.setBounds(748, 480, 126, 30);
@@ -125,7 +126,8 @@ public class Principal extends JFrame {
 		
 		JButton BolaNueva = new JButton("Bola Nueva");
 		BolaNueva.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {						
+			public void actionPerformed(ActionEvent arg0) {		
+				SacaBolas.setVisible(true);
 				if (cont>=90){cont=0;};
 				do
 				a=(int)(Math.random()*90+1);
@@ -176,17 +178,40 @@ public class Principal extends JFrame {
 		pantalla.add(Bingo);
 		
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
-		panelPestaña.setBounds(606, 45, 245, 393);
+		panelPestaña.setBounds(606, 75, 245, 393);
+		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
 		
-		for (int i=0;i<numeroJugadores;i++){
+		JPanel Superior = new JPanel();
+		panelPestaña.addTab("New tab", null, Superior, null);
+		Superior.setLayout(new BoxLayout(Superior, BoxLayout.Y_AXIS));
+		
+		JButton jugador = new JButton("jugador");
+		Superior.add(jugador);
+		
+		JPanel Inferior = new JPanel();
+		panelPestaña.addTab("New tab", null, Inferior, null);
+		
+		JPanel panel = new JPanel();
+		Inferior.add(panel);
+		panel.setLayout(null);
+		
+		/*for (int i=0;i<numeroJugadores;i++){
 				JPanel layeredPane = new JPanel();
 				panelPestaña.addTab((String)nombreJugadores.get(i), null, layeredPane, null);
 				layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
 				for (int j=1;j<=numeroCartones;j++){
 					JLabel pestaña = new JLabel();
 					panelPestaña.add(""+j, pestaña);}
+		}*/
+	}
+	public void reiniciar(){
+		for (int i=1;i<91;i++){numero[i]=0;
+		marcador[i].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Rojos/"+i+".png"))));
 		}
+		for (int i=1;i<91;i++){numero[i]=0;}
+		SacaBolas.setVisible(false);
+		pantalla.repaint();
 	}
 	}
 
