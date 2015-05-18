@@ -182,28 +182,11 @@ public class Principal extends JFrame {
 		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
 		
-		JPanel Superior = new JPanel();
-		panelPestaña.addTab("New tab", null, Superior, null);
-		Superior.setLayout(new BoxLayout(Superior, BoxLayout.Y_AXIS));
-		
-		JButton jugador = new JButton("jugador");
-		Superior.add(jugador);
-		
-		JPanel Inferior = new JPanel();
-		panelPestaña.addTab("New tab", null, Inferior, null);
-		
-		JPanel panel = new JPanel();
-		Inferior.add(panel);
-		panel.setLayout(null);
-		
-		/*for (int i=0;i<numeroJugadores;i++){
+		for (int i=0;i<numeroJugadores;i++){
 				JPanel layeredPane = new JPanel();
 				panelPestaña.addTab((String)nombreJugadores.get(i), null, layeredPane, null);
 				layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
-				for (int j=1;j<=numeroCartones;j++){
-					JLabel pestaña = new JLabel();
-					panelPestaña.add(""+j, pestaña);}
-		}*/
+		}
 	}
 	public void reiniciar(){
 		for (int i=1;i<91;i++){numero[i]=0;
