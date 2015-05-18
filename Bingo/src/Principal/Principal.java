@@ -57,6 +57,7 @@ import Modelo.ModeloVerificacion;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+
 import javax.swing.BoxLayout;
 
 
@@ -68,15 +69,13 @@ public class Principal extends JFrame {
     private int a=0;
     private int cont=0;
     private int numero[]= new int [91];
-    private int numeroCartones=3;
-    
 
 
 
 
 
 	public Principal(int numeroJugadores, ArrayList nombreJugadores) {
-		setResizable(true);
+		setResizable(false);
 		setEnabled(true);
 
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
@@ -118,6 +117,9 @@ public class Principal extends JFrame {
 		JButton PartidaNueva = new JButton("Partida Nueva");
 		PartidaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Principal VentPrinc = new Principal(numeroJugadores, nombreJugadores);
+				VentPrinc.setVisible (true);
+				Principal.this.dispose();
 				reiniciar();			
 			}
 		});
@@ -178,20 +180,37 @@ public class Principal extends JFrame {
 		pantalla.add(Bingo);
 		
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
+
+		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		panelPestaña.setBounds(629, 72, 245, 393);
 		panelPestaña.setBounds(606, 75, 245, 393);
 		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
 		
 		for (int i=0;i<numeroJugadores;i++){
-				JPanel layeredPane = new JPanel();
-				panelPestaña.addTab((String)nombreJugadores.get(i), null, layeredPane, null);
-				layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
+		JPanel pestaña = new JPanel();
+
+		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
+		JPanel Superior = new JPanel();
 		}
 	}
 	public void reiniciar(){
 		for (int i=1;i<91;i++){numero[i]=0;
 		marcador[i].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Rojos/"+i+".png"))));
 		}
+
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBounds(32, 53, 157, -26);
+		pantalla.add(layeredPane);
+		layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
+		
+		JPanel panel = new JPanel();
+		layeredPane.add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 89, 23);
+		panel.add(btnNewButton);
 		for (int i=1;i<91;i++){numero[i]=0;}
 		SacaBolas.setVisible(false);
 		pantalla.repaint();
