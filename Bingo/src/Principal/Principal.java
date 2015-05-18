@@ -121,6 +121,7 @@ public class Principal extends JFrame {
 				Principal VentPrinc = new Principal(numeroJugadores, nombreJugadores);
 				VentPrinc.setVisible (true);
 				Principal.this.dispose();
+				reiniciar();			
 			}
 		});
 		PartidaNueva.setBounds(748, 480, 126, 30);
@@ -128,7 +129,8 @@ public class Principal extends JFrame {
 		
 		JButton BolaNueva = new JButton("Bola Nueva");
 		BolaNueva.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {						
+			public void actionPerformed(ActionEvent arg0) {		
+				SacaBolas.setVisible(true);
 				if (cont>=90){cont=0;};
 				do
 				a=(int)(Math.random()*90+1);
@@ -179,14 +181,43 @@ public class Principal extends JFrame {
 		pantalla.add(Bingo);
 		
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
+
 		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		panelPestaña.setBounds(629, 72, 245, 393);
+		panelPestaña.setBounds(606, 75, 245, 393);
+		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
 		
 		for (int i=0;i<numeroJugadores;i++){
 		JPanel pestaña = new JPanel();
 
 		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
+		JPanel Superior = new JPanel();
+		panelPestaña.addTab("New tab", null, Superior, null);
+		Superior.setLayout(new BoxLayout(Superior, BoxLayout.Y_AXIS));
+		
+		JButton jugador = new JButton("jugador");
+		Superior.add(jugador);
+		
+		JPanel Inferior = new JPanel();
+		panelPestaña.addTab("New tab", null, Inferior, null);
+		
+		JPanel panel = new JPanel();
+		Inferior.add(panel);
+		panel.setLayout(null);}
+		
+		/*for (int i=0;i<numeroJugadores;i++){
+				JPanel layeredPane = new JPanel();
+				panelPestaña.addTab((String)nombreJugadores.get(i), null, layeredPane, null);
+				layeredPane.setLayout(new BoxLayout(layeredPane, BoxLayout.X_AXIS));
+				for (int j=1;j<=numeroCartones;j++){
+					JLabel pestaña = new JLabel();
+					panelPestaña.add(""+j, pestaña);}
+		}*/
+	}
+	public void reiniciar(){
+		for (int i=1;i<91;i++){numero[i]=0;
+		marcador[i].setIcon(new ImageIcon((getClass().getResource("/Principal/imagenes/Botones Rojos/"+i+".png"))));
 		}
 
 		JLayeredPane layeredPane = new JLayeredPane();
@@ -201,6 +232,9 @@ public class Principal extends JFrame {
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(0, 0, 89, 23);
 		panel.add(btnNewButton);
+		for (int i=1;i<91;i++){numero[i]=0;}
+		SacaBolas.setVisible(false);
+		pantalla.repaint();
 	}
 	}
 
