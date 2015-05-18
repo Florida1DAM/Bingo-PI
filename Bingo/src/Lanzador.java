@@ -11,7 +11,7 @@ public class Lanzador {
 
 	public static void main(String[] args) {
 		
-		
+	
 		//Establecemos la conexion con la base de datos
 				ConexionDB Bingo;
 				
@@ -27,7 +27,7 @@ public class Lanzador {
 				
 				Primera frame = new Primera();
 				frame.setVisible(true);
-							
+						
 				}
 				
 				else {//System.out.println("Error en la conexión");	

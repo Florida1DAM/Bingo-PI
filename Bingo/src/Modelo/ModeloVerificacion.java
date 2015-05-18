@@ -11,48 +11,42 @@ import com.mysql.jdbc.ResultSetMetaData;
 
 
 public class ModeloVerificacion {
-	//DEVOLVER CORREDORES
-	private static String CONTRA_SEL="SELECT * FROM Jugadores";
-	private static String CONTRA_COL="CONTRASENA";
+
+	private static String CONTRA_SEL="SELECT contrasena FROM Jugadores where nombre='seleccion'";
+	
 	
 	
 	//Conexion
-	private Connection conexion = null;// maneja la conexión
-	Statement instruccion = null;
-	ResultSet conjuntoResultados = null;
-	
-	
-	//usuariosDB
-	private ArrayList<String> verificacion=null;
+	private static Connection conexion = null; //maneja la conexión
+	static Statement instruccion = null;
+	static ResultSet Contraseña=null;
 	
 	
 	
 	public ModeloVerificacion() {
 		conexion=ConexionDB.getConexion();
-		verificacion= new ArrayList<String>();
 	}
 	
 	
 	
-	public ArrayList getVerificacion(){
+	public static ResultSet Verificacion(){
+		String resultado = null;
+		
 		try{
-			instruccion = this.conexion.createStatement();
-			conjuntoResultados = instruccion.executeQuery(CONTRA_SEL);
-
-			//Listaremos por pantalla los datos
-			while( conjuntoResultados.next() ) {
-				verificacion.add (conjuntoResultados.getString(CONTRA_COL));
-			}// fin de while
-			return verificacion;
+			instruccion = conexion.createStatement();
+			Contraseña = instruccion.executeQuery(CONTRA_SEL);
+			
+			
+			
 		}
 		catch( SQLException excepcionSql ) 
 		{
 			excepcionSql.printStackTrace();
-			return verificacion;
+			
 		}
 		finally{
 			try{
-				conjuntoResultados.close();
+				//conjuntoResultados.close();
 				instruccion.close();
 				//conexion.close();
 			}
@@ -61,6 +55,7 @@ public class ModeloVerificacion {
 				excepcionSql.printStackTrace();
 			}
 		}
+		return Contraseña;
 	}
 	
 	

@@ -75,7 +75,7 @@ public class Principal extends JFrame {
 
 	public Principal(int numeroJugadores, ArrayList nombreJugadores) {
 		setResizable(false);
-		setEnabled(false);
+		
 
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
@@ -165,9 +165,9 @@ public class Principal extends JFrame {
 		Bingo.setIcon(new ImageIcon(getClass().getResource("/Principal/imagenes/btnBingo.png")));
 		Bingo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
-				setBounds(200, 90, 900, 600);
+			
 				JOptionPane.showMessageDialog(null, "Han cantado Bingo!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));	
-				setBounds(200, 90, 900, 600);
+				
 			}
 		});	
 		Bingo.setBounds(765, 11, 109, 50);

@@ -35,8 +35,6 @@ public class Primera extends JFrame {
 
 	public Primera() {
 
-		setEnabled(false);
-
 		setResizable(false);
 
 		
@@ -56,6 +54,7 @@ public class Primera extends JFrame {
 				
 				verificacion=new ModeloVerificacion();
 				
+				
 				if(CampoContra.getText().trim().isEmpty())
 				{
 					JOptionPane.showMessageDialog(null,"Please Enter a Password", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));
@@ -64,8 +63,9 @@ public class Primera extends JFrame {
 
 						
 					}
+				
 				else{
-					if  (CampoContra.equals(verificacion));
+					if  (Seleccion.equals(Contraseña));
 					System.out.println("Contraseña correcta"); 
 					Primera.this.dispose();
 					jugadores VentPrinc1 = new jugadores();		
@@ -114,6 +114,7 @@ public class Primera extends JFrame {
 		pantalla.add(Salir);
 		
 		JComboBox Desplegable = new JComboBox();
+		Desplegable.setEditable(true);
 		Desplegable.setBounds(443, 431, 120, 17);
 		pantalla.add(Desplegable);
 		
@@ -125,9 +126,11 @@ public class Primera extends JFrame {
 				Iterator<String> it=usuarios.getusuarios().iterator();
 				while(it.hasNext()){
 					Desplegable.addItem((String)it.next());
+
+					
 				}
-				
-				
+				String Seleccion = (String)Desplegable.getSelectedItem().toString();
+			    System.out.println(Seleccion);
 	
 
 	}
