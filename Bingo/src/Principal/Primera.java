@@ -65,8 +65,8 @@ public class Primera extends JFrame {
 					}
 				
 				else{
-					if  (Seleccion.equals(Contraseña));
-					System.out.println("Contraseña correcta"); 
+					/*if  (Seleccion.equals(Contraseña));
+					System.out.println("Contraseña correcta"); */
 					Primera.this.dispose();
 					jugadores VentPrinc1 = new jugadores();		
 					VentPrinc1.setVisible (true);
