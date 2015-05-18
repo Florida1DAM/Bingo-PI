@@ -20,7 +20,7 @@ public class Fondo extends JPanel {
 		setSize(fondo1.getIconWidth(),fondo1.getIconHeight());
 				
 	}
-	protected void paintComponent (Graphics g){
+	public void paintComponent (Graphics g){
 		
 		Dimension d = getSize();//new Dimension(imagen.getIconWidth(),imagen.getIconHeight());
 		g.drawImage(fondo1.getImage(),0,0, d.width, d.height,null);
