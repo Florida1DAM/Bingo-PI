@@ -112,7 +112,7 @@ public class Principal extends JFrame {
 			}
 		});	
 		
-		Salir.setBounds(748, 521, 126, 29);
+		Salir.setBounds(449, 521, 126, 29);
 		pantalla.add(Salir);
 		
 
@@ -125,7 +125,7 @@ public class Principal extends JFrame {
 				reiniciar();			
 			}
 		});
-		PartidaNueva.setBounds(748, 480, 126, 30);
+		PartidaNueva.setBounds(449, 480, 126, 30);
 		pantalla.add(PartidaNueva);
 		
 		JButton BolaNueva = new JButton("Bola Nueva");
@@ -155,7 +155,7 @@ public class Principal extends JFrame {
 		
 		
 		
-		BolaNueva.setBounds(629, 480, 109, 70);
+		BolaNueva.setBounds(234, 480, 109, 70);
 		pantalla.add(BolaNueva);
 		
 		JButton Linea = new JButton("");
@@ -184,8 +184,8 @@ public class Principal extends JFrame {
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
 
 		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		panelPestaña.setBounds(629, 72, 245, 393);
-		panelPestaña.setBounds(606, 75, 245, 393);
+		panelPestaña.setBounds(606, 75, 245, 475);
+		panelPestaña.setBounds(606, 75, 245, 450);
 		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
 		
