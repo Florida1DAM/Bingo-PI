@@ -101,7 +101,7 @@ public class Principal extends JFrame {
 		marcador[cont].setBounds(10+j*60, 10+i*45, 38, 38);
 		pantalla.add(marcador[cont]);
 		SacaBolas=new JLabel();
-		SacaBolas.setBounds(40,450, 100, 100);
+		SacaBolas.setBounds(140,450, 100, 100);
 		}}
 		
 		
