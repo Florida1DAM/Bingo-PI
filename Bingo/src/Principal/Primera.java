@@ -1,8 +1,8 @@
 package Principal;
 
 import java.awt.BorderLayout;
+import java.applet.AudioClip;
 import java.awt.EventQueue;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,8 +20,13 @@ import java.util.Iterator;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
 
+
+
+
+
 import Modelo.ModeloVerificacion;
 import Modelo.modeloCorredores;
+
 
 public class Primera extends JFrame {
 
@@ -31,6 +36,7 @@ public class Primera extends JFrame {
 	public static JPasswordField CampoContra;
 	modeloCorredores usuarios;
 	ModeloVerificacion verificacion;
+	AudioClip sonido;
 	
 
 	public Primera() {
@@ -39,7 +45,9 @@ public class Primera extends JFrame {
 
 
 		setResizable(false);
-
+		sonido= java.applet.Applet.newAudioClip(getClass().getResource("../Principal/imagenes/primeraVentana.mp3"));
+		sonido.play();
+		
 		
 		setIconImage(new ImageIcon(getClass().getResource("../Principal/icono.png")).getImage());
 		
@@ -51,12 +59,29 @@ public class Primera extends JFrame {
 		pantalla.setLayout(null);
 		setTitle("Bingo twist");
 		
+		JComboBox Desplegable = new JComboBox();
+		Desplegable.setEditable(false);
+		
+		
+		Desplegable.setBounds(443, 431, 120, 17);
+		pantalla.add(Desplegable);
+		
+
+		
+		CampoContra = new JPasswordField();
+		CampoContra.setBounds(443, 460, 120, 18);
+		pantalla.add(CampoContra);
+		
+		
 		JButton Entrar = new JButton("Enter");
 		Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				verificacion=new ModeloVerificacion();
-				
+		
+				String Seleccion = (String) Desplegable.getSelectedItem();
+				String contrasena=verificacion.Verificacion(Seleccion);
+				System.out.println(Seleccion); 
 				
 				if(CampoContra.getText().trim().isEmpty())
 				{
@@ -68,11 +93,20 @@ public class Primera extends JFrame {
 					}
 				
 				else{
-					/*if  (Seleccion.equals(Contraseña));
-					System.out.println("Contraseña correcta"); */
-					Primera.this.dispose();
-					jugadores VentPrinc1 = new jugadores();		
-					VentPrinc1.setVisible (true);
+					
+					//verificacion.Verificacion();
+					char[] Contra = CampoContra.getPassword(); 
+					
+					
+					
+					if  (contrasena.equals(String.valueOf(Contra)))
+					{
+						System.out.println("Contraseña correcta"); 
+						Primera.this.dispose();
+						jugadores VentPrinc1 = new jugadores();		
+						VentPrinc1.setVisible (true);
+					}
+				
 					
 				}
 
@@ -102,9 +136,7 @@ public class Primera extends JFrame {
 		Password.setBounds(373, 462, 63, 14);
 		pantalla.add(Password);
 		
-		CampoContra = new JPasswordField();
-		CampoContra.setBounds(443, 460, 120, 18);
-		pantalla.add(CampoContra);
+	
 		
 		JButton Salir = new JButton("Leave");
 		Salir.addActionListener(new ActionListener() {
@@ -116,10 +148,7 @@ public class Primera extends JFrame {
 		Salir.setBounds(478, 503, 89, 23);
 		pantalla.add(Salir);
 		
-		JComboBox Desplegable = new JComboBox();
-		Desplegable.setEditable(true);
-		Desplegable.setBounds(443, 431, 120, 17);
-		pantalla.add(Desplegable);
+		
 		
 		
 		//Rellenamos JComboBox
@@ -132,9 +161,13 @@ public class Primera extends JFrame {
 
 					
 				}
-				String Seleccion = (String)Desplegable.getSelectedItem().toString();
-			    System.out.println(Seleccion);
-	
+				
+				
+				
+				
 
 	}
+	
+	
+
 }
