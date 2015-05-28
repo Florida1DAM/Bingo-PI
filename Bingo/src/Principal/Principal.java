@@ -155,7 +155,7 @@ public class Principal extends JFrame {
 		
 		
 		
-		BolaNueva.setBounds(234, 480, 109, 70);
+		BolaNueva.setBounds(306, 480, 109, 70);
 		pantalla.add(BolaNueva);
 		
 		JButton Linea = new JButton("");
