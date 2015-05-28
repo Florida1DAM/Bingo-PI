@@ -105,22 +105,24 @@ public class Principal extends JFrame {
 		marcador[cont].setBounds(10+j*60, 10+i*45, 38, 38);
 		pantalla.add(marcador[cont]);
 		SacaBolas=new JLabel();
-		SacaBolas.setBounds(40,450, 100, 100);
+		SacaBolas.setBounds(140,450, 100, 100);
 		}}
 		
 		
 		JButton Salir = new JButton("Salir");
+		Salir.setBackground(Color.ORANGE);
 		Salir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {						
 				Principal.this.dispose();						
 			}
 		});	
 		
-		Salir.setBounds(449, 521, 126, 29);
+		Salir.setBounds(470, 494, 126, 56);
 		pantalla.add(Salir);
 		
 
 		JButton PartidaNueva = new JButton("Partida Nueva");
+		PartidaNueva.setBackground(Color.CYAN);
 		PartidaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Principal VentPrinc = new Principal(numeroJugadores, nombreJugadores);
@@ -129,10 +131,12 @@ public class Principal extends JFrame {
 				reiniciar();			
 			}
 		});
-		PartidaNueva.setBounds(449, 480, 126, 30);
+		PartidaNueva.setBounds(470, 424, 126, 56);
 		pantalla.add(PartidaNueva);
 		
 		JButton BolaNueva = new JButton("Bola Nueva");
+		BolaNueva.setForeground(Color.WHITE);
+		BolaNueva.setBackground(Color.MAGENTA);
 		BolaNueva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {		
 				SacaBolas.setVisible(true);
@@ -159,7 +163,7 @@ public class Principal extends JFrame {
 		
 		
 		
-		BolaNueva.setBounds(306, 480, 109, 70);
+		BolaNueva.setBounds(351, 424, 109, 126);
 		pantalla.add(BolaNueva);
 		
 		JButton Linea = new JButton("");
@@ -170,7 +174,7 @@ public class Principal extends JFrame {
 				JOptionPane.showMessageDialog(null, "Han cantado Linea!!!!!", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));			
 			}
 		});	
-		Linea.setBounds(629, 11, 109, 50);
+		Linea.setBounds(606, 11, 109, 50);
 		pantalla.add(Linea);
 		
 		JButton Bingo = new JButton("");
@@ -188,7 +192,13 @@ public class Principal extends JFrame {
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
 
 		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+
 		panelPestaña.setBounds(606, 75, 270, 475);
+		panelPestaña.setBounds(606, 75, 268, 475);
+		
+		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
+		pantalla.add(panelPestaña);
+
 		
 		Player jugador[]=new Player[numeroJugadores];
 		for (int i=0;i<numeroJugadores;i++){

@@ -7,19 +7,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Principal.Primera;
+
 import com.mysql.jdbc.ResultSetMetaData;
 
 
 public class ModeloVerificacion {
-
-	private static String CONTRA_SEL="SELECT contrasena FROM Jugadores where nombre='seleccion'";
 	
+	Primera nombre;
+
+	
+	private static String CONTRA_SEL="SELECT contrasena FROM Jugadores where nombre=";
 	
 	
 	//Conexion
 	private static Connection conexion = null; //maneja la conexión
 	static Statement instruccion = null;
-	static ResultSet Contraseña=null;
+	ResultSet resultado=null;
+	String contrasena=null;
 	
 	
 	
@@ -29,15 +34,14 @@ public class ModeloVerificacion {
 	
 	
 	
-	public static ResultSet Verificacion(){
-		String resultado = null;
+	public String Verificacion(String nombre){
 		
 		try{
 			instruccion = conexion.createStatement();
-			Contraseña = instruccion.executeQuery(CONTRA_SEL);
-			
-			
-			
+			resultado = instruccion.executeQuery(CONTRA_SEL+"'"+nombre+"'");
+			if(resultado.next()){
+				contrasena=resultado.getString("contrasena");
+			}
 		}
 		catch( SQLException excepcionSql ) 
 		{
@@ -55,7 +59,7 @@ public class ModeloVerificacion {
 				excepcionSql.printStackTrace();
 			}
 		}
-		return Contraseña;
+		return contrasena;
 	}
 	
 	
