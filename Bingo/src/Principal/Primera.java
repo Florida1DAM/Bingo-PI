@@ -24,6 +24,7 @@ import javax.swing.JComboBox;
 
 
 
+
 import Modelo.ModeloVerificacion;
 import Modelo.modeloCorredores;
 
@@ -63,13 +64,13 @@ public class Primera extends JFrame {
 		Desplegable.setEditable(false);
 		
 		
-		Desplegable.setBounds(443, 431, 120, 17);
+		Desplegable.setBounds(443, 431, 147, 17);
 		pantalla.add(Desplegable);
 		
 
 		
 		CampoContra = new JPasswordField();
-		CampoContra.setBounds(443, 460, 120, 18);
+		CampoContra.setBounds(443, 460, 147, 18);
 		pantalla.add(CampoContra);
 		
 		
@@ -101,10 +102,23 @@ public class Primera extends JFrame {
 					
 					if  (contrasena.equals(String.valueOf(Contra)))
 					{
-						System.out.println("Contraseña correcta"); 
+						//System.out.println("Contraseña correcta");
+						
+						JOptionPane.showMessageDialog (null, "Bienvenido, ya puedes jugar "
+								+ "\n YA PUEDES JUGAR", "CONECTADO", JOptionPane.INFORMATION_MESSAGE);
 						Primera.this.dispose();
 						jugadores VentPrinc1 = new jugadores();		
 						VentPrinc1.setVisible (true);
+					}else{
+						
+						JOptionPane.showMessageDialog(null, "La contraseña no es correcta"
+								+ "\n No puedes acceder al juego", "CONTRASEÑA INCORRECTA", JOptionPane.ERROR_MESSAGE);
+								System.exit(0);
+								
+					
+					
+						//System.out.println("Debes introducir la contraseña correcta"); 
+						
 					}
 				
 					
@@ -145,7 +159,7 @@ public class Primera extends JFrame {
 			}
 		});	
 		
-		Salir.setBounds(478, 503, 89, 23);
+		Salir.setBounds(501, 503, 89, 23);
 		pantalla.add(Salir);
 		
 		
