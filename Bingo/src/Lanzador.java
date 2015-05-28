@@ -1,9 +1,12 @@
-
 import Modelo.ConexionDB;
 import Modelo.modeloCorredores;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
+import juego.PanelPrueba;
+import juego.Ventana;
 import Principal.Primera;
 
 
@@ -11,7 +14,7 @@ public class Lanzador {
 
 	public static void main(String[] args) {
 		
-	
+		
 		//Establecemos la conexion con la base de datos
 				ConexionDB Bingo;
 				
@@ -24,10 +27,11 @@ public class Lanzador {
 						+ "\n YA PUEDES JUGAR", "CONECTADO", JOptionPane.INFORMATION_MESSAGE);
 			//	JOptionPane.showMessageDialog (null, "Message", "Title", JOptionPane.WARNING_MESSAGE);
 				
+				Primera ventana= new Primera();
+				ventana.setVisible(true);
 				
-				Primera frame = new Primera();
-				frame.setVisible(true);
-						
+				
+							
 				}
 				
 				else {//System.out.println("Error en la conexión");	

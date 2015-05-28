@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.sql.Connection;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +13,7 @@ public class modeloCorredores {
 	//DEVOLVER CORREDORES
 	private static String USUARIO_SEL="SELECT * FROM Jugadores";
 	private static String USUARIO_COL="nombre";
-	
+	private static String CARTON_NUM="SELECT NUMEROS FROM CARTONES WHERE NUM_CARTON =";
 	
 	//Conexion
 	private Connection conexion = null;// maneja la conexión
@@ -24,7 +23,7 @@ public class modeloCorredores {
 	
 	//usuariosDB
 	private ArrayList<String> usuarios=null;
-	
+	private String numeros="";
 	
 	
 	public modeloCorredores() {
@@ -49,6 +48,35 @@ public class modeloCorredores {
 		{
 			excepcionSql.printStackTrace();
 			return usuarios;
+		}
+		finally{
+			try{
+				conjuntoResultados.close();
+				instruccion.close();
+
+				//conexion.close();
+
+			}
+			catch( SQLException excepcionSql ) 
+			{
+				excepcionSql.printStackTrace();
+			}
+		}
+	}
+	public String getNumeros(int carton){
+		try{ 
+			instruccion = this.conexion.createStatement();
+			conjuntoResultados = instruccion.executeQuery(CARTON_NUM+carton);
+
+			//Listaremos por pantalla los datos
+				if(conjuntoResultados.next())
+				numeros=conjuntoResultados.getString("numeros");
+						return numeros;
+		}
+		catch( SQLException excepcionSql ) 
+		{
+			excepcionSql.printStackTrace();
+			return numeros;
 		}
 		finally{
 			try{
