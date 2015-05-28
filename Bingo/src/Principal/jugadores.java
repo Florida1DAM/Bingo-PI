@@ -108,26 +108,8 @@ public class jugadores extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
-					/*
-					 * Si no hay ningun nombre de jugador y/o ningun email, nos aparece un mensaje informativo
-					 * avisandonos de la auscencia de estos
-					 */
-					
-					/*if (CampoNombre.getText().trim().isEmpty())
-					{
-
-						JOptionPane.showMessageDialog(null,"Please Enter a Player", "Bingo Twist", JOptionPane.WARNING_MESSAGE, new ImageIcon("src/Principal/imagenes/iconoJOption.jpg"));
-
-						 Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
-						 VentPrinc.setVisible (false);
-
-						 Principal VentPrinc = new Principal(numeroJugadores,nombreJugador);
-
-							VentPrinc.setVisible (false);
-
-								
-					}
-*/
+				
+				
 					
 					
 					{
