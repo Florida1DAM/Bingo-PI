@@ -60,6 +60,9 @@ import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 
+import juego.Cartones;
+import juego.Player;
+
 
 public class Principal extends JFrame {
 
@@ -68,6 +71,7 @@ public class Principal extends JFrame {
     private JLabel SacaBolas=new JLabel();
     private int a=0;
     private int cont=0;
+    private int numeroCartones;
     private int numero[]= new int [91];
 
 
@@ -101,7 +105,7 @@ public class Principal extends JFrame {
 		marcador[cont].setBounds(10+j*60, 10+i*45, 38, 38);
 		pantalla.add(marcador[cont]);
 		SacaBolas=new JLabel();
-		SacaBolas.setBounds(40,450, 100, 100);
+		SacaBolas.setBounds(140,450, 100, 100);
 		}}
 		
 		
@@ -188,16 +192,24 @@ public class Principal extends JFrame {
 		JTabbedPane panelPestaña = new JTabbedPane(JTabbedPane.TOP);
 
 		panelPestaña.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+
+		panelPestaña.setBounds(606, 75, 270, 475);
 		panelPestaña.setBounds(606, 75, 268, 475);
 		
 		//panelPestaña.setLayout(new BoxLayout(panelPestaña, BoxLayout.Y_AXIS));
 		pantalla.add(panelPestaña);
-		
-		for (int i=0;i<numeroJugadores;i++){
-		JPanel pestaña = new JPanel();
 
-		panelPestaña.addTab((String)nombreJugadores.get(i), null, pestaña, null);
-		JPanel Superior = new JPanel();
+		
+		Player jugador[]=new Player[numeroJugadores];
+		for (int i=0;i<numeroJugadores;i++){
+		JPanel panel[] = new JPanel[numeroJugadores];
+		
+		numeroCartones=(int)(Math.random()*3+1);
+		Cartones carton=new Cartones(numeroCartones);
+		panel[i]=new JPanel();
+		panel[i].add(carton);
+		panelPestaña.addTab((String)nombreJugadores.get(i), null, panel[i], null);
+		pantalla.add(panelPestaña);
 		}
 	}
 	public void reiniciar(){
